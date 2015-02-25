@@ -8,12 +8,12 @@ public class CameraController : MonoBehaviour
 
     private bool isMovingTowardPlayer;
     private Vector3 translateDestination;
-    private float speed;
+    public float speed;
 
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        speed = 1F;
+        speed = 10;
     }
 
     void Update()
@@ -29,16 +29,23 @@ public class CameraController : MonoBehaviour
 
     private void MoveTowardPlayer()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, playerPos.position, step);
-        if(transform.position == playerPos.position)
+        translateDestination = transform.position;
+        translateDestination.x = playerPos.position.x;
+
+        float distance = Mathf.Abs(transform.position.x - playerPos.position.x);
+        float step = speed * distance * Time.deltaTime;
+        //if (step <= 5)
+        //    step = 5;
+        if (distance<0.1F) 
             isMovingTowardPlayer = false;
+        else        
+            transform.position = Vector3.MoveTowards(transform.position, translateDestination, step);
+
     }
 
     public void SwitchPlayer(Transform playerPos)
     {
         this.playerPos = playerPos;
-        //translateDestination =  
         isMovingTowardPlayer = true;
     }
 }
