@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
         //animPosFirst = Vector3.zero;
         //animPosSecond = Vector3.zero;
 
-        playerPosition = 0;
+        playerPosition = 1;
         verticalPace = 5;
     }
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-        if (Physics.SphereCast(p1, GetComponent<CapsuleCollider>().radius, rayDirection, out hit, 11f))
+        if (Physics.SphereCast(p1, GetComponent<CapsuleCollider>().radius, rayDirection, out hit, 6f))
             return false;
 
         return true;
