@@ -83,12 +83,10 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		Debug.Log("capsule collider radius" + GetComponent<CapsuleCollider>().radius);
 		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 6f))
         {
             if (hit.collider.tag == "Wall")
             {
-                Debug.Log(hit.collider.tag);
                 return false;
             }
         }
