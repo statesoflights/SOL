@@ -1,51 +1,55 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraController : MonoBehaviour
-{
+public class CameraController : MonoBehaviour {
 
-    private Transform playerPos;
+    public Transform target;
 
     private bool isMovingTowardPlayer;
     private Vector3 translateDestination;
     public float speed;
 
-    void Awake()
+    void Start()
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         speed = 10;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (!isMovingTowardPlayer)        MoveCamera();
+
+        if (!isMovingTowardPlayer) MoveCamera();
         else MoveTowardPlayer();
     }
 
     private void MoveCamera()
     {
-        transform.position = new Vector3(playerPos.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
     }
 
     private void MoveTowardPlayer()
     {
         translateDestination = transform.position;
-        translateDestination.x = playerPos.position.x;
+        translateDestination.x = target.position.x;
 
-        float distance = Mathf.Abs(transform.position.x - playerPos.position.x);
+        float distance = Mathf.Abs(transform.position.x - target.position.x);
         float step = speed * distance * Time.deltaTime;
-        //if (step <= 5)
-        //    step = 5;
-        if (distance<0.1F) 
+
+        //if (step <= 0.1)
+        //step = 0.1F;
+        if (distance < 0.01F)
+        {
+            target.GetComponent<PlayerController>().ActivatePlayer();
             isMovingTowardPlayer = false;
-        else        
+        }
+        else
             transform.position = Vector3.MoveTowards(transform.position, translateDestination, step);
 
     }
 
+
     public void SwitchPlayer(Transform playerPos)
     {
-        this.playerPos = playerPos;
+        target = playerPos;
         isMovingTowardPlayer = true;
     }
 }

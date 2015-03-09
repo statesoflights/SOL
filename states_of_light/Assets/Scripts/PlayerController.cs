@@ -1,47 +1,58 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof(Animator),typeof(Rigidbody),typeof(Collider))]
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
 
     private Animator animator;
-    private Rigidbody body;
 
-    private bool isLookingRight;
-    private bool isMovingVertically;
+    public bool isLookingRight;
+    public bool isMovingVertically;
     private bool directionUp;
 
     public bool isGrounded;
     public bool isCurrentPlayer;
 
     public int playerPosition;
-    public int playerId;
+    private int verticalPace;
 
-    public Vector3 moveDirection = Vector3.zero;
+    public Vector3 moveDirection;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
-        body = GetComponent<Rigidbody>();
+        //body = GetComponent<Rigidbody>();
+
+        //gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         isLookingRight = true;
         isMovingVertically = false;
         isGrounded = false;
+        //isFollowing = false;
 
-        moveDirection = new Vector3(0, 0, 0);
+        moveDirection = Vector3.zero;
+        //animPosFirst = Vector3.zero;
+        //animPosSecond = Vector3.zero;
 
         playerPosition = 0;
+        verticalPace = 5;
     }
 
     void FixedUpdate()
     {
-        if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01) isLookingRight = true;
-        else if (Input.GetAxis("Horizontal") < -0.01) isLookingRight = false;
-        
-        if (isCurrentPlayer && !isMovingVertically) UpdateMovement();
+        if (isCurrentPlayer)
+        {
+            if (!isMovingVertically)
+            {
+                if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01) isLookingRight = true;
+                else if (Input.GetAxis("Horizontal") < -0.01) isLookingRight = false;
 
-        UpdateAnimator();
+                UpdateMovement();
+
+                if (Input.GetButtonDown("Vertical") && isGrounded)
+                    VerticalMoveStart();
+            }
+            UpdateAnimator();
+        }
     }
 
     private void UpdateMovement()
@@ -61,21 +72,60 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isMovingVertically", isMovingVertically);
     }
 
-    private void FollowPlayer()
+    private bool CanMoveVertically(Vector3 rayDirection)
     {
+        RaycastHit hit;
+        Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
+        if (Physics.SphereCast(p1, GetComponent<CapsuleCollider>().radius, rayDirection, out hit, 11f))
+            return false;
+
+        return true;
     }
+    private void VerticalMoveStart()
+    {
+        if (Input.GetAxis("Vertical") > 0 && playerPosition + 1 <= 2 && CanMoveVertically(transform.forward))
+        {
+            playerPosition += 1;
+            directionUp = true;
+        }
+        else if (Input.GetAxis("Vertical") < 0 && playerPosition - 1 >= 0 && CanMoveVertically(-transform.forward))
+        {
+            playerPosition -= 1;
+            directionUp = false;
+        }
+        else return;
+        
+        Vector3 gotoPosition = transform.position;
+        gotoPosition.z = playerPosition * verticalPace;
+
+        isMovingVertically = true;
+        StopCoroutine("VerticalGoto");
+        StartCoroutine("VerticalGoto", gotoPosition);
+    }
+    IEnumerator VerticalGoto(Vector3 target)
+    {
+        while (Vector3.Distance(transform.position, target) > 0.05f)
+        {
+            transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
+            yield return null;
+        }
+        isMovingVertically = false;
+    }
+
 
     public void ActivatePlayer()
     {
         isCurrentPlayer = true;
         //rigidbody.isKinematic = false;
-        //collider.enabled = true;
+        //isFollowing = false;
     }
     public void DesactivatePlayer()
     {
         isCurrentPlayer = false;
-        //rigidbody.isKinematic = true;
-        //collider.enabled = false;
+        animator.SetFloat("HorizontalSpeed", 0F);
+
+        //reset the movedirection of the player when idle
+        moveDirection = new Vector3(0, 0, 0);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -83,13 +133,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             isGrounded = true;
-            moveDirection = new Vector3(0, 0, 0);
-        }
 
+            //reset the direction of the player after each jump
+            moveDirection = Vector3.zero;
+
+            // Only when the small player touch the floor can we replay the follow animation
+            //if (playerId == 1 && !isFollowing)
+            //    gc.isPlayFollowAnim = false;
+        }
     }
     void OnCollisionExit(Collision collisionInfo)
     {
         if (collisionInfo.gameObject.tag == "Floor") isGrounded = false;
     }
-    
 }
