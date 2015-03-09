@@ -87,7 +87,7 @@ GameObject:
   - 54: {fileID: 156720870}
   - 136: {fileID: 156720873}
   - 114: {fileID: 156720869}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Grand_Heros
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - 136: {fileID: 227994476}
   - 54: {fileID: 227994477}
   - 114: {fileID: 227994481}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Petit_Heros
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -504,7 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7761023210dccb142b125cacaf52ef63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
 --- !u!81 &1412710885
 AudioListener:
   m_ObjectHideFlags: 0
@@ -604,7 +603,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 948aff8ced8d2d444b7ca6644c65e85a, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
