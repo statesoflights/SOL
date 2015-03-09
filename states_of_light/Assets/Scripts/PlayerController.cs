@@ -17,8 +17,20 @@ public class PlayerController : MonoBehaviour {
 
     public Vector3 moveDirection;
 
+	private CapsuleCollider capsule;
+
+	public float Radius
+	{
+		get
+		{
+			Vector3 scale = transform.lossyScale;
+			return capsule.radius * Mathf.Max(scale.x, scale.y, scale.z);
+		}
+	}
+
     void Awake()
     {
+		capsule = GetComponent<CapsuleCollider> ();
         animator = GetComponent<Animator>();
         //body = GetComponent<Rigidbody>();
 
@@ -76,7 +88,8 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-        if (Physics.SphereCast(p1, GetComponent<CapsuleCollider>().radius, rayDirection, out hit, 6f))
+		Debug.Log("capsule collider radius" + GetComponent<CapsuleCollider>().radius);
+		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 6f))
             return false;
 
         return true;
