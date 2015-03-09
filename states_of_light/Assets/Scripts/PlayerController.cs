@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
 	private CapsuleCollider capsule;
 
-	public float Radius
+	public float Radius //test git
 	{
 		get
 		{
