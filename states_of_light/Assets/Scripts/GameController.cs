@@ -3,15 +3,15 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-    private PlayerController player1;
-    private PlayerController player2;
+    private PlayerController playerBiggy;
+    private PlayerController playerSmall;
     private PlayerController currentPlayer;
     private CameraController cameraController;
 
     void Awake()
     {
-        player1 = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        player2 = GameObject.FindGameObjectWithTag("PlayerSmall").GetComponent<PlayerController>();
+        playerBiggy = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerSmall = GameObject.FindGameObjectWithTag("PlayerSmall").GetComponent<PlayerController>();
 
         cameraController = Camera.main.GetComponent<CameraController>();       
     }
@@ -28,25 +28,26 @@ public class GameController : MonoBehaviour {
 
     private void InitScene()
     {
-        player1.ActivatePlayer();
-        player2.DesactivatePlayer();
-        cameraController.target = player1.transform;
-        currentPlayer = player1;
+        playerBiggy.ActivatePlayer();
+        playerSmall.DesactivatePlayer();
+        cameraController.target = playerBiggy.transform;
+        currentPlayer = playerBiggy;
     }
 
     private void SwitchPlayer()
     {
-        if (player1.isCurrentPlayer)
+        if (playerBiggy.isCurrentPlayer)
         {
-            currentPlayer = player2;
-            player1.DesactivatePlayer();
-            cameraController.SwitchPlayer(player2.transform);
+            currentPlayer = playerSmall;
+            playerBiggy.DesactivatePlayer();
+            playerSmall.GetComponent<Small>().isFollowing = false;
+            cameraController.SwitchPlayer(playerSmall.transform);
         }
         else
         {
-            currentPlayer = player1;
-            player2.DesactivatePlayer();
-            cameraController.SwitchPlayer(player1.transform);
+            currentPlayer = playerBiggy;
+            playerSmall.DesactivatePlayer();
+            cameraController.SwitchPlayer(playerBiggy.transform);
         }
     }
 }

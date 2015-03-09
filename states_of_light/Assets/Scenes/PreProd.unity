@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 385670704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: 1.79999995, z: 5.0999999}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -187,6 +187,8 @@ MonoBehaviour:
   isGrounded: 0
   isCurrentPlayer: 0
   playerPosition: 0
+  spacebetweenPlayers: 0
+  verticalPace: 0
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &405446512
 GameObject:
@@ -1718,6 +1720,8 @@ MonoBehaviour:
   isGrounded: 0
   isCurrentPlayer: 0
   playerPosition: 0
+  spacebetweenPlayers: 0
+  verticalPace: 0
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!136 &2145322587
 CapsuleCollider:
@@ -1792,7 +1796,7 @@ Transform:
   m_GameObject: {fileID: 2145322585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: .899999976, z: 4.9000001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

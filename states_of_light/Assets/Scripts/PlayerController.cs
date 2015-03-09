@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour {
     public bool isCurrentPlayer;
 
     public int playerPosition;
-    private int verticalPace;
+    public float spacebetweenPlayers;
+    public int verticalPace;
 
     public Vector3 moveDirection;
 
@@ -32,21 +33,15 @@ public class PlayerController : MonoBehaviour {
     {
 		capsule = GetComponent<CapsuleCollider> ();
         animator = GetComponent<Animator>();
-        //body = GetComponent<Rigidbody>();
-
-        //gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-
         isLookingRight = true;
         isMovingVertically = false;
         isGrounded = false;
-        //isFollowing = false;
 
         moveDirection = Vector3.zero;
-        //animPosFirst = Vector3.zero;
-        //animPosSecond = Vector3.zero;
 
         playerPosition = 1;
         verticalPace = 5;
+        spacebetweenPlayers = 0;
     }
 
     void FixedUpdate()
@@ -90,8 +85,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
 		Debug.Log("capsule collider radius" + GetComponent<CapsuleCollider>().radius);
 		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 6f))
-            return false;
-
+        {
+            if (hit.collider.tag == "Wall")
+            {
+                Debug.Log(hit.collider.tag);
+                return false;
+            }
+        }
         return true;
     }
     private void VerticalMoveStart()
@@ -107,9 +107,9 @@ public class PlayerController : MonoBehaviour {
             directionUp = false;
         }
         else return;
-        
+
         Vector3 gotoPosition = transform.position;
-        gotoPosition.z = playerPosition * verticalPace;
+        gotoPosition.z = (playerPosition * verticalPace) + spacebetweenPlayers;
 
         isMovingVertically = true;
         StopCoroutine("VerticalGoto");
@@ -129,9 +129,8 @@ public class PlayerController : MonoBehaviour {
     public void ActivatePlayer()
     {
         isCurrentPlayer = true;
-        //rigidbody.isKinematic = false;
-        //isFollowing = false;
     }
+
     public void DesactivatePlayer()
     {
         isCurrentPlayer = false;
