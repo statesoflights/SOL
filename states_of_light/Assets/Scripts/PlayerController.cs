@@ -11,12 +11,11 @@ public class PlayerController : MonoBehaviour {
 
     public bool isGrounded;
     public bool isCurrentPlayer;
+    public bool canSwitch;
 
     public int playerPosition;
     public float spacebetweenPlayers;
     public int verticalPace;
-
-    public Vector3 moveDirection;
 
 	private CapsuleCollider capsule;
 
@@ -33,11 +32,11 @@ public class PlayerController : MonoBehaviour {
     {
 		capsule = GetComponent<CapsuleCollider> ();
         animator = GetComponent<Animator>();
+
+        canSwitch = true;
         isLookingRight = true;
         isMovingVertically = false;
         isGrounded = false;
-
-        moveDirection = Vector3.zero;
 
         playerPosition = 1;
         verticalPace = 5;
@@ -55,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 
                 UpdateMovement();
 
-                if (Input.GetButtonDown("Vertical") && isGrounded)
+                if (Input.GetAxis("Vertical")!= 0 && isGrounded)
                     VerticalMoveStart();
             }
             UpdateAnimator();
@@ -64,11 +63,20 @@ public class PlayerController : MonoBehaviour {
 
     private void UpdateMovement()
     {
-        moveDirection.x = Input.GetAxis("Horizontal") / 10;
-        if (Input.GetButton("Jump") && isGrounded)
-            moveDirection.y = 0.1F;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, collider.bounds.extents.x + 0.1F) && hit.collider.tag == "Wall")
+        {           
+            rigidbody.velocity = Vector3.up * rigidbody.velocity.y;
+        }
+        else
+            rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 5, rigidbody.velocity.y);
 
-        transform.position += moveDirection;
+        if (Input.GetButton("Jump") && isGrounded)
+        {
+            rigidbody.AddForce(0, 300, 0);
+            isGrounded = false;
+            canSwitch = false;
+        }
     }
     private void UpdateAnimator()
     {
@@ -106,26 +114,34 @@ public class PlayerController : MonoBehaviour {
         }
         else return;
 
+        rigidbody.velocity = Vector3.zero;
         Vector3 gotoPosition = transform.position;
         gotoPosition.z = (playerPosition * verticalPace) + spacebetweenPlayers;
 
+        canSwitch = false;
         isMovingVertically = true;
         StopCoroutine("VerticalGoto");
         StartCoroutine("VerticalGoto", gotoPosition);
     }
+
     IEnumerator VerticalGoto(Vector3 target)
     {
+        rigidbody.isKinematic = true;
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
             transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
             yield return null;
         }
+        rigidbody.isKinematic = false;
         isMovingVertically = false;
+        canSwitch = true;
+
     }
 
 
     public void ActivatePlayer()
     {
+        rigidbody.velocity = Vector3.zero;
         isCurrentPlayer = true;
     }
 
@@ -135,25 +151,17 @@ public class PlayerController : MonoBehaviour {
         animator.SetFloat("HorizontalSpeed", 0F);
 
         //reset the movedirection of the player when idle
-        moveDirection = new Vector3(0, 0, 0);
+        rigidbody.velocity = Vector3.zero;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y) &&
+            (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
         {
+            Debug.Log("Here");
             isGrounded = true;
-
-            //reset the direction of the player after each jump
-            moveDirection = Vector3.zero;
-
-            // Only when the small player touch the floor can we replay the follow animation
-            //if (playerId == 1 && !isFollowing)
-            //    gc.isPlayFollowAnim = false;
+            canSwitch = true;
         }
-    }
-    void OnCollisionExit(Collision collisionInfo)
-    {
-        if (collisionInfo.gameObject.tag == "Floor") isGrounded = false;
     }
 }

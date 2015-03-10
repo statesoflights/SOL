@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && currentPlayer.isGrounded) SwitchPlayer();
+        if (Input.GetKeyDown(KeyCode.LeftControl) && currentPlayer.canSwitch) SwitchPlayer();
     }
 
     private void InitScene()

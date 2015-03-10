@@ -6,6 +6,7 @@ public class Small : MonoBehaviour {
     public GameObject playerBiggy;
 
     private PlayerController pc;
+    public bool canFollow;
     public bool isFollowing;
     private Vector3 posFollow;
 
@@ -38,26 +39,27 @@ public class Small : MonoBehaviour {
     public void StartFollowPlayerAnim()
     {
         isFollowing = true;
+        pc.isGrounded = false;
         //rigidbody.isKinematic = true;
         //StopCoroutine("AnimGoToPlayerPos");
         //StartCoroutine("AnimGoToPlayerPos", playerBiggy.transform.position);
         FollowPlayer();
     }
 
-    IEnumerator AnimGoToPlayerPos(Vector3 target)
-    {
-        target.y = transform.position.y;
-        while (Vector3.Distance(transform.position, target) > 0.05f)
-        {
-            transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
-            yield return null;
-        }
+    //IEnumerator AnimGoToPlayerPos(Vector3 target)
+    //{
+    //    target.y = transform.position.y;
+    //    while (Vector3.Distance(transform.position, target) > 0.05f)
+    //    {
+    //        transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
+    //        yield return null;
+    //    }
 
-        isFollowing = true;
+    //    isFollowing = true;
 
-        //Only After the Recall animation finishes we can move the player 1
-        playerBiggy.GetComponent<PlayerController>().ActivatePlayer();
-    }
+    //    //Only After the Recall animation finishes we can move the player 1
+    //    playerBiggy.GetComponent<PlayerController>().ActivatePlayer();
+    //}
 
     private void FollowPlayer()
     {
