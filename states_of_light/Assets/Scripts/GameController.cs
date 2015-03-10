@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+	public static GameController Instance { get; private set; }
+
     private PlayerController playerBiggy;
     private PlayerController playerSmall;
     private PlayerController currentPlayer;
@@ -10,11 +12,21 @@ public class GameController : MonoBehaviour {
 
     void Awake()
     {
+		Instance = this;
+
         playerBiggy = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerSmall = GameObject.FindGameObjectWithTag("PlayerSmall").GetComponent<PlayerController>();
 
         cameraController = Camera.main.GetComponent<CameraController>();       
     }
+
+	void OnDestroy()
+	{
+		if (Instance == this)
+		{
+			Instance = null;
+		}
+	}
 
     void Start()
     {

@@ -124,6 +124,10 @@ public class PlayerController : MonoBehaviour {
         StartCoroutine("VerticalGoto", gotoPosition);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e251fd72e228e446c04a07e4736e1efc0278c84b
     IEnumerator VerticalGoto(Vector3 target)
     {
         rigidbody.isKinematic = true;
@@ -163,5 +167,13 @@ public class PlayerController : MonoBehaviour {
             isGrounded = true;
             canSwitch = true;
         }
+<<<<<<< HEAD
+=======
+	}
+
+	void OnCollisionExit(Collision collisionInfo)
+    {
+        if (collisionInfo.gameObject.tag == "Floor") isGrounded = false;
+>>>>>>> e251fd72e228e446c04a07e4736e1efc0278c84b
     }
 }
