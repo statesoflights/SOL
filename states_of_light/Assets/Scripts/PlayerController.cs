@@ -113,6 +113,8 @@ public class PlayerController : MonoBehaviour {
         StopCoroutine("VerticalGoto");
         StartCoroutine("VerticalGoto", gotoPosition);
     }
+
+
     IEnumerator VerticalGoto(Vector3 target)
     {
         while (Vector3.Distance(transform.position, target) > 0.05f)
@@ -151,8 +153,9 @@ public class PlayerController : MonoBehaviour {
             //if (playerId == 1 && !isFollowing)
             //    gc.isPlayFollowAnim = false;
         }
-    }
-    void OnCollisionExit(Collision collisionInfo)
+	}
+
+	void OnCollisionExit(Collision collisionInfo)
     {
         if (collisionInfo.gameObject.tag == "Floor") isGrounded = false;
     }
