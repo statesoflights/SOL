@@ -24,7 +24,7 @@ public class Trigger1 : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (other.tag.Equals("Player") && Input.GetButtonDown("Fire1"))
+		if (other.tag.Equals("PlayerSmall") && Input.GetButtonDown("Fire1"))
 		{
 			//SendMessage("OnTriggerActivated", SendMessageOptions.DontRequireReceiver);
 			/*foreach (Activable script in GetComponents<Activable>())
