@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour {
 
     private bool isMovingTowardPlayer;
     private Vector3 translateDestination;
+	private ArrayList listElementTransparent = new ArrayList();
+
     public float speed;
 
     void Start()
@@ -19,6 +21,35 @@ public class CameraController : MonoBehaviour {
 
         if (!isMovingTowardPlayer) MoveCamera();
         else MoveTowardPlayer();
+
+		for (int j = 0; j < listElementTransparent.Count; j++)
+		{
+			SpriteRenderer rend = (SpriteRenderer) listElementTransparent[j];
+			if (rend) {
+				Color tempColor = rend.color;
+				tempColor.a = 1F;
+				rend.color = tempColor;
+			}
+		}
+		listElementTransparent.Clear();
+		Vector3 directionCamPlayer = new Vector3 (target.position.x - transform.position.x, target.position.y - transform.position.y, target.position.z - transform.position.z);
+		float distanceCamPlayer = directionCamPlayer.magnitude;
+		RaycastHit[] hits;
+		hits = Physics.RaycastAll(transform.position, directionCamPlayer, distanceCamPlayer - 1.0F);
+		int i = 0;
+		while (i < hits.Length) {
+			RaycastHit hit = hits[i];
+			SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();
+			if (rend) {
+				Color tempColor = rend.color;
+				tempColor.a = 0.3F;
+				rend.color = tempColor;
+			}
+			listElementTransparent.Add(rend);
+			i++;
+
+		}
+
     }
 
     private void MoveCamera()
