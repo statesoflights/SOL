@@ -323,7 +323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!136 &385670708
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSmall: {fileID: 2145322585}
+<<<<<<< HEAD
 --- !u!1 &387285525
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +502,8 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+=======
+>>>>>>> 318c1a33afcf634dfdb0c1e267912efa27026dcb
 --- !u!1 &405446512
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,11 +649,14 @@ Transform:
   - {fileID: 1077690069}
   - {fileID: 821347607}
   - {fileID: 1679284485}
-  - {fileID: 826331658}
   - {fileID: 1845592128}
+<<<<<<< HEAD
   - {fileID: 387285526}
   - {fileID: 220900579}
   - {fileID: 7520648}
+=======
+  - {fileID: 826331658}
+>>>>>>> 318c1a33afcf634dfdb0c1e267912efa27026dcb
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &515381862
@@ -1100,7 +1106,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488396101}
-  m_RootOrder: 22
+  m_RootOrder: 23
 --- !u!212 &826331659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2091,7 +2097,7 @@ Transform:
   m_LocalScale: {x: 20, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 488396101}
-  m_RootOrder: 23
+  m_RootOrder: 22
 --- !u!65 &1845592129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2398,7 +2404,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &2145322592
 MonoBehaviour:
   m_ObjectHideFlags: 0

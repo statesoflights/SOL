@@ -1,0 +1,531 @@
+fileFormatVersion: 2
+guid: f5211faf5e1f85648bc798662ee9a479
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: machine-et-cailloux_0
+    21300002: machine-et-cailloux_1
+    21300004: machine-et-cailloux_2
+    21300006: machine-et-cailloux_3
+    21300008: machine-et-cailloux_4
+    21300010: machine-et-cailloux_5
+    21300012: machine-et-cailloux_6
+    21300014: machine-et-cailloux_7
+    21300016: machine-et-cailloux_8
+    21300018: machine-et-cailloux_9
+    21300020: machine-et-cailloux_10
+    21300022: machine-et-cailloux_11
+    21300024: machine-et-cailloux_12
+    21300026: machine-et-cailloux_13
+    21300028: machine-et-cailloux_14
+    21300030: machine-et-cailloux_15
+    21300032: machine-et-cailloux_16
+    21300034: machine-et-cailloux_17
+    21300036: machine-et-cailloux_18
+    21300038: machine-et-cailloux_19
+    21300040: machine-et-cailloux_20
+    21300042: machine-et-cailloux_21
+    21300044: machine-et-cailloux_22
+    21300046: machine-et-cailloux_23
+    21300048: machine-et-cailloux_24
+    21300050: machine-et-cailloux_25
+    21300052: machine-et-cailloux_26
+    21300054: machine-et-cailloux_27
+    21300056: machine-et-cailloux_28
+    21300058: machine-et-cailloux_29
+    21300060: machine-et-cailloux_30
+    21300062: machine-et-cailloux_31
+    21300064: machine-et-cailloux_32
+    21300066: machine-et-cailloux_33
+    21300068: machine-et-cailloux_34
+    21300070: machine-et-cailloux_35
+    21300072: machine-et-cailloux_36
+    21300074: machine-et-cailloux_37
+    21300076: machine-et-cailloux_38
+    21300078: machine-et-cailloux_39
+    21300080: machine-et-cailloux_40
+    21300082: machine-et-cailloux_41
+    21300084: machine-et-cailloux_42
+    21300086: machine-et-cailloux_43
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: machine-et-cailloux_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_1
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_2
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_3
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_4
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_5
+      rect:
+        serializedVersion: 2
+        x: 3255
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_6
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_7
+      rect:
+        serializedVersion: 2
+        x: 4557
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_8
+      rect:
+        serializedVersion: 2
+        x: 5208
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_9
+      rect:
+        serializedVersion: 2
+        x: 5859
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_10
+      rect:
+        serializedVersion: 2
+        x: 6510
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_11
+      rect:
+        serializedVersion: 2
+        x: 7161
+        y: 7372
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_13
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_14
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_15
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_16
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_17
+      rect:
+        serializedVersion: 2
+        x: 3255
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_18
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_19
+      rect:
+        serializedVersion: 2
+        x: 4557
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_20
+      rect:
+        serializedVersion: 2
+        x: 5208
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_21
+      rect:
+        serializedVersion: 2
+        x: 5859
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_22
+      rect:
+        serializedVersion: 2
+        x: 6510
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_23
+      rect:
+        serializedVersion: 2
+        x: 7161
+        y: 6552
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_25
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_26
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_27
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_28
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_29
+      rect:
+        serializedVersion: 2
+        x: 3255
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_30
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_31
+      rect:
+        serializedVersion: 2
+        x: 4557
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_32
+      rect:
+        serializedVersion: 2
+        x: 5208
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_33
+      rect:
+        serializedVersion: 2
+        x: 5859
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_34
+      rect:
+        serializedVersion: 2
+        x: 6510
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_35
+      rect:
+        serializedVersion: 2
+        x: 7161
+        y: 5732
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_37
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_38
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_39
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_40
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_41
+      rect:
+        serializedVersion: 2
+        x: 3255
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_42
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: machine-et-cailloux_43
+      rect:
+        serializedVersion: 2
+        x: 4557
+        y: 4912
+        width: 651
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
