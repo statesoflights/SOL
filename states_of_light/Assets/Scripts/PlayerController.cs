@@ -182,18 +182,20 @@ public class PlayerController : MonoBehaviour {
         RaycastHit hit;
         if (isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 1))
         {
-            Vector3 temp_pos = hit.collider.transform.position;
-            temp_pos.x = transform.position.x;
-            temp_pos.x += collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
-
-            if (transform.position.x < 145 && hit.collider.GetComponent<DragableStone>())
+            if (hit.collider.GetComponent<DragableStone>().canBeDragged)
             {
-                //hit.transform.position = temp_pos;
 
+                Vector3 temp_pos = hit.collider.transform.position;
+                temp_pos.x = transform.position.x;
+                temp_pos.x += collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
+                
+                hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
+
+               //hit.transform.position = temp_pos;
                 //Vector3 force = rigidbody.velocity;
                 //force.x += (transform.position.x - hit.collider.transform.position.x)*force.x/(collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F);
                 //Debug.Log(force);
-                hit.collider.rigidbody.velocity = rigidbody.velocity;
+                //hit.collider.rigidbody.velocity = rigidbody.velocity;
                 //if (transform.position.x - hit.collider.transform.position.x < collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F)
                 //    transform.position
                 //hit.rigidbody.AddForce(Vector3.right * 20);
@@ -205,18 +207,19 @@ public class PlayerController : MonoBehaviour {
             }
         }
         else
-            if (!isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 1))
+            if (!isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 0.3f))
             {
-                Vector3 temp_pos = hit.collider.transform.position;
-                temp_pos.x = transform.position.x;
-                temp_pos.x -= collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
-
-                if (transform.position.x > -20 && hit.collider.GetComponent<DragableStone>())
+                if (hit.collider.GetComponent<DragableStone>().canBeDragged)
                 {
+                    Vector3 temp_pos = hit.collider.transform.position;
+                    temp_pos.x = transform.position.x;
+                    temp_pos.x -= collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
+
+                    hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
                     //Vector3 temp = rigidbody.velocity;
                     //Debug.Log(temp);
                     //temp.x -= 0.4f;
-                    hit.collider.rigidbody.velocity = rigidbody.velocity;
+                    //hit.collider.rigidbody.velocity = rigidbody.velocity;
 
                     //hit.transform.position = temp_pos;
                     isDragging = true;
