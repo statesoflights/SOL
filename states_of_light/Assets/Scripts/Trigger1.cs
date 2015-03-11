@@ -13,6 +13,9 @@ public interface IActivable
 
 public class Trigger1 : MonoBehaviour {
 
+	public GameObject machine; //La machine à broyer qui va faire tomber une pierre
+	private Animator animator;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -24,7 +27,10 @@ public class Trigger1 : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (other.tag.Equals("PlayerSmall") && Input.GetButtonDown("Fire1"))
+		animator = machine.GetComponent<Animator>();
+		int triggerState = animator.GetInteger("state");
+
+		if (other.tag.Equals("PlayerSmall") && Input.GetButtonDown("Fire1") && triggerState != 1)
 		{
 			//SendMessage("OnTriggerActivated", SendMessageOptions.DontRequireReceiver);
 			/*foreach (Activable script in GetComponents<Activable>())
