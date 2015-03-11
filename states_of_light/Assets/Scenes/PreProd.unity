@@ -188,6 +188,7 @@ MonoBehaviour:
   isGrounded: 0
   isCurrentPlayer: 0
   canSwitch: 0
+  isDragging: 0
   playerPosition: 0
   spacebetweenPlayers: 0
   verticalPace: 0
@@ -203,6 +204,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSmall: {fileID: 2145322585}
+--- !u!1 &387285525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 387285526}
+  - 33: {fileID: 387285530}
+  - 65: {fileID: 387285529}
+  - 23: {fileID: 387285528}
+  - 114: {fileID: 387285527}
+  - 54: {fileID: 387285531}
+  m_Layer: 0
+  m_Name: Stone_Draggable
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &387285526
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387285525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.5, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 488396101}
+  m_RootOrder: 24
+--- !u!114 &387285527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387285525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028f223dec594694c9747325f03e57b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &387285528
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387285525}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &387285529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387285525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &387285530
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387285525}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &387285531
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387285525}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &405446512
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +448,7 @@ Transform:
   - {fileID: 1679284485}
   - {fileID: 826331658}
   - {fileID: 1845592128}
+  - {fileID: 387285526}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &515381862
@@ -2023,6 +2122,7 @@ MonoBehaviour:
   isGrounded: 0
   isCurrentPlayer: 0
   canSwitch: 0
+  isDragging: 0
   playerPosition: 0
   spacebetweenPlayers: 0
   verticalPace: 0
@@ -2053,7 +2153,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!95 &2145322589
 Animator:
   serializedVersion: 3
