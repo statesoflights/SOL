@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
     public bool isDragging;
 
     public int playerPosition;
-    public float spacebetweenPlayers;
     public int verticalPace;
 
 	private CapsuleCollider capsule;
@@ -42,7 +41,6 @@ public class PlayerController : MonoBehaviour {
 
         playerPosition = 1;
         verticalPace = 5;
-        spacebetweenPlayers = 0;
     }
 
     void FixedUpdate()
@@ -51,9 +49,6 @@ public class PlayerController : MonoBehaviour {
         {
             if (!isMovingVertically)
             {
-                if (Input.GetKey(KeyCode.LeftShift) && isGrounded) DragObject();
-                else isDragging = false;
-
                 if (!isDragging)
                 {
                     if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01) isLookingRight = true;
@@ -101,11 +96,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
 		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 6f))
         {
-            if (hit.collider.tag == "Wall")
+			if (hit.collider.tag == "Wall" )
             {
                 return false;
-            }
-        }
+			}
+		}
+		if(!Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y +0.1F))
+		   return false;
         return true;
     }
     private void VerticalMoveStart()
@@ -124,7 +121,7 @@ public class PlayerController : MonoBehaviour {
 
         rigidbody.velocity = Vector3.zero;
         Vector3 gotoPosition = transform.position;
-        gotoPosition.z = (playerPosition * verticalPace) + spacebetweenPlayers;
+        gotoPosition.z = (playerPosition * verticalPace);
 
         canSwitch = false;
         isMovingVertically = true;
@@ -148,7 +145,9 @@ public class PlayerController : MonoBehaviour {
 
 
     public void ActivatePlayer()
-    {
+	{
+		rigidbody.isKinematic = false;
+		rigidbody.useGravity = true;
         rigidbody.velocity = Vector3.zero;
         isCurrentPlayer = true;
     }
@@ -164,7 +163,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y) &&
+        if (Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y+0.1F) &&
             (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
         {
             isGrounded = true;
@@ -175,55 +174,5 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionExit(Collision collisionInfo)
     {
         if (collisionInfo.gameObject.tag == "Floor") isGrounded = false;
-    }
-
-    private void DragObject()
-    {
-        RaycastHit hit;
-        if (isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 1))
-        {
-            if (hit.collider.GetComponent<DragableStone>().canBeDragged)
-            {
-
-                Vector3 temp_pos = hit.collider.transform.position;
-                temp_pos.x = transform.position.x;
-                temp_pos.x += collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
-                
-                hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
-
-               //hit.transform.position = temp_pos;
-                //Vector3 force = rigidbody.velocity;
-                //force.x += (transform.position.x - hit.collider.transform.position.x)*force.x/(collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F);
-                //Debug.Log(force);
-                //hit.collider.rigidbody.velocity = rigidbody.velocity;
-                //if (transform.position.x - hit.collider.transform.position.x < collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F)
-                //    transform.position
-                //hit.rigidbody.AddForce(Vector3.right * 20);
-                //rigidbody.velocity = Vector3.zero;
-                
-                //temp.x = collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
-                //transform.position = hit.collider.transform.position - temp;
-                isDragging = true;
-            }
-        }
-        else
-            if (!isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 0.3f))
-            {
-                if (hit.collider.GetComponent<DragableStone>().canBeDragged)
-                {
-                    Vector3 temp_pos = hit.collider.transform.position;
-                    temp_pos.x = transform.position.x;
-                    temp_pos.x -= collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
-
-                    hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
-                    //Vector3 temp = rigidbody.velocity;
-                    //Debug.Log(temp);
-                    //temp.x -= 0.4f;
-                    //hit.collider.rigidbody.velocity = rigidbody.velocity;
-
-                    //hit.transform.position = temp_pos;
-                    isDragging = true;
-                }
-            }
     }
 }

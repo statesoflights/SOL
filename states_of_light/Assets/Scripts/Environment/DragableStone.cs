@@ -7,6 +7,7 @@ public class DragableStone : MonoBehaviour {
     public float min_x;
 
     public bool canBeDragged;
+    public bool haveAnim;
     public Vector3 animPosition;
 
     private Animator anim;
@@ -23,8 +24,7 @@ public class DragableStone : MonoBehaviour {
 
     void FixedUpdate()
     {
-        //Debug.Log(max_x - transform.position.x);
-        if (transform.position.x >= max_x)
+        if (haveAnim && transform.position.x >= max_x)
             StartAnim();
     }
 
@@ -39,7 +39,6 @@ public class DragableStone : MonoBehaviour {
     {
         anim.enabled = true;
         canBeDragged = false;
-        Debug.Log("Started Anim");
         anim.SetBool("Fall",true);
     }
     

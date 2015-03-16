@@ -30,20 +30,16 @@ public class Trigger1 : MonoBehaviour {
 		animator = machine.GetComponent<Animator>();
 		int triggerState = animator.GetInteger("state");
 
-		if (other.tag.Equals("PlayerSmall") && Input.GetButtonDown("Fire1") && triggerState != 1)
+		if (other.tag.Equals("PlayerSmall") && Input.GetButtonDown("Action") && triggerState != 1)
 		{
-			//SendMessage("OnTriggerActivated", SendMessageOptions.DontRequireReceiver);
-			/*foreach (Activable script in GetComponents<Activable>())
-			{
-				script.OnActivate();
-			}*/
 			foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
 			{
 				if (script is IActivable)
 				{
 					((IActivable)script).OnActivate();
 				}
-			}
+            }
+            Destroy(gameObject);
 		}
 	}
 }

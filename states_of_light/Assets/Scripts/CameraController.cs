@@ -22,6 +22,12 @@ public class CameraController : MonoBehaviour {
         if (!isMovingTowardPlayer) MoveCamera();
         else MoveTowardPlayer();
 
+		CheckTransparenty ();
+
+    }
+
+	private void CheckTransparenty()
+	{
 		for (int j = 0; j < listElementTransparent.Count; j++)
 		{
 			SpriteRenderer rend = (SpriteRenderer) listElementTransparent[j];
@@ -32,25 +38,27 @@ public class CameraController : MonoBehaviour {
 			}
 		}
 		listElementTransparent.Clear();
+		
 		Vector3 directionCamPlayer = new Vector3 (target.position.x - transform.position.x, target.position.y - transform.position.y, target.position.z - transform.position.z);
 		float distanceCamPlayer = directionCamPlayer.magnitude;
 		RaycastHit[] hits;
 		hits = Physics.RaycastAll(transform.position, directionCamPlayer, distanceCamPlayer - 1.0F);
-		int i = 0;
-		while (i < hits.Length) {
+
+		for (int i = 0;i < hits.Length;i++) 
+		{
 			RaycastHit hit = hits[i];
-			SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();
-			if (rend) {
-				Color tempColor = rend.color;
-				tempColor.a = 0.3F;
-				rend.color = tempColor;
+			SpriteRenderer[] spriteRenderers = hit.collider.GetComponentsInChildren<SpriteRenderer>();
+			foreach (SpriteRenderer rend in spriteRenderers) {
+				if (rend) {
+					Color tempColor = rend.color;
+					tempColor.a = 0.1F;
+					rend.color = tempColor;
+				}
+				listElementTransparent.Add(rend);
 			}
-			listElementTransparent.Add(rend);
-			i++;
-
+			//SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();		
 		}
-
-    }
+	}
 
     private void MoveCamera()
     {

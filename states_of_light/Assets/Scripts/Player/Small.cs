@@ -17,52 +17,37 @@ public class Small : MonoBehaviour {
 
 	void Start () 
     {
-        pc.spacebetweenPlayers = -0.3F;
-        InitPosition();
+        Init();
 	}
 
-	void Update () 
+	void FixedUpdate () 
     {
         if (isFollowing)
             FollowPlayer();
 	}
 
-    void InitPosition()
+    void Init()
     {
-        transform.position = new Vector3(transform.position.x,
-            transform.position.y,
-            pc.spacebetweenPlayers + (pc.playerPosition * pc.verticalPace));
+        //transform.position = new Vector3(transform.position.x,
+        //    transform.position.y,
+        //    pc.spacebetweenPlayers + (pc.playerPosition * pc.verticalPace));
 
         StartFollowPlayerAnim();
     }
 
     public void StartFollowPlayerAnim()
-    {
-        isFollowing = true;
+	{
+		pc.rigidbody.isKinematic = true;
         pc.isGrounded = false;
-        //rigidbody.isKinematic = true;
-        //StopCoroutine("AnimGoToPlayerPos");
-        //StartCoroutine("AnimGoToPlayerPos", playerBiggy.transform.position);
+		pc.canSwitch = false;
+        isFollowing = true;
+
         FollowPlayer();
     }
 
-    //IEnumerator AnimGoToPlayerPos(Vector3 target)
-    //{
-    //    target.y = transform.position.y;
-    //    while (Vector3.Distance(transform.position, target) > 0.05f)
-    //    {
-    //        transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
-    //        yield return null;
-    //    }
-
-    //    isFollowing = true;
-
-    //    //Only After the Recall animation finishes we can move the player 1
-    //    playerBiggy.GetComponent<PlayerController>().ActivatePlayer();
-    //}
-
     private void FollowPlayer()
     {
+		pc.playerPosition = playerBiggy.GetComponent<PlayerController> ().playerPosition;
         posFollow = playerBiggy.transform.position;
         posFollow.y = playerBiggy.transform.position.y + 
             (playerBiggy.GetComponent<CapsuleCollider>().height / 2) + 

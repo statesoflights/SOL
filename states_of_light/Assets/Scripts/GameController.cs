@@ -33,9 +33,9 @@ public class GameController : MonoBehaviour {
         InitScene();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && currentPlayer.canSwitch) SwitchPlayer();
+        if (Input.GetButtonDown("SwitchPlayer") && currentPlayer.canSwitch) SwitchPlayer();
     }
 
     private void InitScene()

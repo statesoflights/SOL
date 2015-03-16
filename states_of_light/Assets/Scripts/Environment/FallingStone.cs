@@ -7,7 +7,7 @@ public class FallingStone : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (other.tag.Equals("PlayerSmall") && Input.GetButtonDown("Fire1"))
+		if (other.tag.Equals("Player") && Input.GetButtonDown("Action"))
 		{
 			anim.SetBool("Fall", true);
 		}
