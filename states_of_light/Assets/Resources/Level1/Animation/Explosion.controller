@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: Explosion
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: Fall
+  - m_Name: Trigger
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -39,7 +39,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Fall
+    m_ConditionEvent: Trigger
     m_EventTreshold: 0
     m_ExitTime: .75
   m_Atomic: 1

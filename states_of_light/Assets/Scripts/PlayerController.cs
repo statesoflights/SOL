@@ -67,8 +67,9 @@ public class PlayerController : MonoBehaviour {
     private void UpdateMovement()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, collider.bounds.extents.x + 0.1F) && hit.collider.tag == "Wall")
-        {           
+        if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, collider.bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
+        {
+            Debug.Log("Here");
             rigidbody.velocity = Vector3.up * rigidbody.velocity.y;
         }
         else

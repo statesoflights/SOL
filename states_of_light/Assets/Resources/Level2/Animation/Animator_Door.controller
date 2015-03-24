@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Fall
+  m_Name: Animator_Door
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Trigger
@@ -17,7 +17,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110787634}
+    m_StateMachine: {fileID: 110773092}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -26,76 +26,76 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110145962
+--- !u!1101 &110166548
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110240224}
-  m_DstState: {fileID: 110207304}
-  m_TransitionDuration: .25
+  m_SrcState: {fileID: 110258724}
+  m_DstState: {fileID: 110278634}
+  m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Trigger
     m_EventTreshold: 0
-    m_ExitTime: .75
+    m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1102 &110207304
+--- !u!1102 &110258724
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StoneFall
+  m_Name: New State
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: f348bdfa2ed7ff1468c8667448e24150, type: 2}
-  m_ParentStateMachine: {fileID: 110787634}
-  m_Position: {x: 216, y: -108, z: 0}
+  - {fileID: 0}
+  m_ParentStateMachine: {fileID: 110773092}
+  m_Position: {x: 240, y: 96, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110240224
+--- !u!1102 &110278634
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Initial
+  m_Name: Door_Open
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 0fe17e63d6ba981419280640cb40289b, type: 2}
-  m_ParentStateMachine: {fileID: 110787634}
-  m_Position: {x: 216, y: 72, z: 0}
+  - {fileID: 7400000, guid: 563ba16455cba1c4383f5213e0e8668b, type: 2}
+  m_ParentStateMachine: {fileID: 110773092}
+  m_Position: {x: 240, y: -48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1107 &110787634
+--- !u!1107 &110773092
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110240224}
+  m_DefaultState: {fileID: 110258724}
   m_States:
-  - {fileID: 110207304}
-  - {fileID: 110240224}
+  - {fileID: 110278634}
+  - {fileID: 110258724}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110240224}
+      first: {fileID: 110258724}
       second:
-      - {fileID: 110145962}
+      - {fileID: 110166548}
     data:
-      first: {fileID: 110207304}
+      first: {fileID: 110278634}
       second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
