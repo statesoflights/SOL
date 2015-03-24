@@ -45,3 +45,7 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: rocks
+    userID: 1
+    uniqueID: 3702877931
+    locked: 0
