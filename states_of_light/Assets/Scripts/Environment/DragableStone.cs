@@ -39,7 +39,7 @@ public class DragableStone : MonoBehaviour {
     {
         anim.enabled = true;
         canBeDragged = false;
-        anim.SetBool("Fall",true);
+        anim.SetBool("Trigger",true);
     }
     
 }
