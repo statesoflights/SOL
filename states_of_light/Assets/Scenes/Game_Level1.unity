@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &31731393
 GameObject:
@@ -2613,7 +2612,7 @@ Transform:
   m_PrefabInternal: {fileID: 1293373465}
   m_GameObject: {fileID: 385670704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 1.79999995, z: 5}
+  m_LocalPosition: {x: 45.5499992, y: 1.79999995, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7894,7 +7893,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: 45.5499992
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9555,13 +9554,12 @@ Transform:
 --- !u!114 &1613900463
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 967c11fed5c8a5446afc8ad7948044b8,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1613900461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0937e0459bf78e843824d7b0e14b5b40, type: 3}
+  m_Script: {fileID: 11500000, guid: 7515a6a8c1ca0de4498059315070efb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 674556102}
