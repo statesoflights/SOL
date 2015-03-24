@@ -9,7 +9,7 @@ public class Niveau1_Script_Machine : MonoBehaviour, IActivable
 
 	void Awake()
 	{
-		GameController gameController = GameController.Instance;
+		//GameController gameController = GameController.Instance;
 
 		animator = machine.GetComponent<Animator>();
 	}

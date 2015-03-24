@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PreProd_Game.unity
+    path: Assets/Scenes/Game_Level1.unity
   - enabled: 1
-    path: Assets/Scenes/PreProd_GameOver.unity
+    path: Assets/Scenes/Game_Loading.unity
+  - enabled: 1
+    path: Assets/Scenes/Game_Level2.unity
