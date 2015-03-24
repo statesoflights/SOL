@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, collider.bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
         {
-            Debug.Log("Here");
             rigidbody.velocity = Vector3.up * rigidbody.velocity.y;
         }
         else
@@ -95,10 +94,11 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 6f))
+		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 5.0f))
         {
 			if (hit.collider.tag == "Wall" )
             {
+                Debug.Log(hit.collider);
                 return false;
 			}
 		}
