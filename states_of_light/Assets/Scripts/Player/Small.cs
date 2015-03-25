@@ -37,7 +37,7 @@ public class Small : MonoBehaviour {
 
     public void StartFollowPlayerAnim()
 	{
-		pc.rigidbody.isKinematic = true;
+		pc.GetComponent<Rigidbody>().isKinematic = true;
         pc.isGrounded = false;
 		pc.canSwitch = false;
         isFollowing = true;
