@@ -62,7 +62,7 @@ public class LaserScript : MonoBehaviour {
             mouse = mouseRay.GetPoint(distance);
 
             //Debug.Log(mouse);
-            //gameObject.transform.LookAt(mouse);
+            gameObject.transform.LookAt(mouse);
             Ray rayFromGun = new Ray(transform.position, mouse - transform.position );
             RaycastHit hit;
 
