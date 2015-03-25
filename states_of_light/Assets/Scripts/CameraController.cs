@@ -51,7 +51,7 @@ public class CameraController : MonoBehaviour {
 			foreach (SpriteRenderer rend in spriteRenderers) {
 				if (rend) {
 					Color tempColor = rend.color;
-					tempColor.a = 0.1F;
+					tempColor.a = 0.3F;
 					rend.color = tempColor;
 				}
 				listElementTransparent.Add(rend);
