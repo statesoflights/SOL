@@ -48,15 +48,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Environment\DragableStone.cs" />
-     <Compile Include="Assets\Scripts\Environment\FallingStone.cs" />
      <Compile Include="Assets\Scripts\Environment\Niveau1_Script_Machine.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger1.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_Anim.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_EndLevel.cs" />
+     <Compile Include="Assets\Scripts\Environment\Trigger_Interruptor.cs" />
      <Compile Include="Assets\Scripts\GUI\Loading_Controller.cs" />
      <Compile Include="Assets\Scripts\GUI\MainMenu_GUI.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
-     <Compile Include="Assets\Scripts\Laser\LaserScript.cs" />
+     <Compile Include="Assets\Scripts\Light\LaserScript.cs" />
+     <Compile Include="Assets\Scripts\Light\LightEmitter.cs" />
      <Compile Include="Assets\Scripts\Player\Biggy.cs" />
      <Compile Include="Assets\Scripts\Player\Small.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

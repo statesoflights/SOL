@@ -45,7 +45,23 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
-  - name: rocks
+  - name: Plan0
     userID: 1
     uniqueID: 3702877931
+    locked: 0
+  - name: Plan1
+    userID: 2
+    uniqueID: 4095960805
+    locked: 0
+  - name: Plan2
+    userID: 3
+    uniqueID: 3635314789
+    locked: 0
+  - name: Plan3
+    userID: 4
+    uniqueID: 3444156639
+    locked: 0
+  - name: Plan4
+    userID: 5
+    uniqueID: 1021806931
     locked: 0
