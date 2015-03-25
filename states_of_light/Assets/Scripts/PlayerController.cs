@@ -68,16 +68,16 @@ public class PlayerController : MonoBehaviour {
     private void UpdateMovement()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, collider.bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
+        if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
         {
-            rigidbody.velocity = Vector3.up * rigidbody.velocity.y;
+            GetComponent<Rigidbody>().velocity = Vector3.up * GetComponent<Rigidbody>().velocity.y;
         }
         else
-            rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 5, rigidbody.velocity.y);
+            GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal") * 5, GetComponent<Rigidbody>().velocity.y);
 
         if (Input.GetButton("Jump") && isGrounded)
         {
-            rigidbody.AddForce(0, 300, 0);
+            GetComponent<Rigidbody>().AddForce(0, 300, 0);
             isGrounded = false;
             canSwitch = false;
         }
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour {
                 return false;
 			}
 		}
-		if(!Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y +0.1F))
+		if(!Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y +0.1F))
 		   return false;
         return true;
     }
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour {
         }
         else return;
 
-        rigidbody.velocity = Vector3.zero;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         Vector3 gotoPosition = transform.position;
         gotoPosition.z = (playerPosition * verticalPace);
 
@@ -135,13 +135,13 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator VerticalGoto(Vector3 target)
     {
-        rigidbody.isKinematic = true;
+        GetComponent<Rigidbody>().isKinematic = true;
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
             transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
             yield return null;
         }
-        rigidbody.isKinematic = false;
+        GetComponent<Rigidbody>().isKinematic = false;
         isMovingVertically = false;
         canSwitch = true;
 
@@ -150,9 +150,9 @@ public class PlayerController : MonoBehaviour {
 
     public void ActivatePlayer()
 	{
-		rigidbody.isKinematic = false;
-		rigidbody.useGravity = true;
-        rigidbody.velocity = Vector3.zero;
+		GetComponent<Rigidbody>().isKinematic = false;
+		GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         isCurrentPlayer = true;
     }
 
@@ -162,12 +162,12 @@ public class PlayerController : MonoBehaviour {
         animator.SetFloat("HorizontalSpeed", 0F);
 
         //reset the movedirection of the player when idle
-        rigidbody.velocity = Vector3.zero;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y+0.1F) &&
+        if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y+0.1F) &&
             (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
         {
             isGrounded = true;

@@ -19,7 +19,7 @@ public class LightEmitter : MonoBehaviour {
 
         line = GetComponent<LineRenderer>();
         line.enabled = false;
-        light.enabled = false;
+        GetComponent<Light>().enabled = false;
 	}
 
     public void InterruptorIsActive(int id)
@@ -51,7 +51,7 @@ public class LightEmitter : MonoBehaviour {
     IEnumerator DrawLight()
     {
         line.enabled = true;
-        light.enabled = true;
+        GetComponent<Light>().enabled = true;
 
         while (canEmitLight)
         {
@@ -72,6 +72,6 @@ public class LightEmitter : MonoBehaviour {
         }
 
         line.enabled = false;
-        light.enabled = false;
+        GetComponent<Light>().enabled = false;
     }
 }
