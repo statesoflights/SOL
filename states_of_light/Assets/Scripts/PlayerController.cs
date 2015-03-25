@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour {
 
 	private CapsuleCollider capsule;
 
-	public float Radius //test git
+	//Retourne le rayon du capsule collider du perso, qui permettra de faire un sphereCast pour savoir si le perso peut changer de plan
+	public float Radius
 	{
 		get
 		{
@@ -90,11 +91,13 @@ public class PlayerController : MonoBehaviour {
         animator.SetBool("isMovingVertically", isMovingVertically);
     }
 
+
+	//Retourne true si le perso peut se déplacer
     private bool CanMoveVertically(Vector3 rayDirection)
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 5.0f))
+		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace))
         {
 			if (hit.collider.tag == "Wall" )
             {
