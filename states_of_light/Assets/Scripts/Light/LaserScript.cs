@@ -4,6 +4,7 @@ using System.Collections;
 public class LaserScript : MonoBehaviour {
 
     LineRenderer line;
+    Light light;
     PlayerController pc_Zac;
 
     private Vector3 mouse;
@@ -12,10 +13,14 @@ public class LaserScript : MonoBehaviour {
     private int PlanPosition_min;
     private int PlanPosition_max;
 
+    public int lentilleSpotLight_ID;
+    private Lentille lentille;
+    public bool isFiringLaser;
 
     void Awake()
     {
         pc_Zac = transform.GetComponentInParent<PlayerController>();
+        light = transform.GetComponentInChildren<Light>();
     }
 
     // Use this for initialization
@@ -26,27 +31,43 @@ public class LaserScript : MonoBehaviour {
         PlanPosition_min = 0;
         PlanPosition_max = 2;
 
-        //gameObject.light.enabled = false;
+        light.enabled = false;
         line.enabled = false;
+
+        lentilleSpotLight_ID = -1;
+        lentille = null;
+
+        isFiringLaser = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (!isFiringLaser)
         {
-            StopCoroutine("FireLaser"); 
-            StartCoroutine("FireLaser");
+            if (Input.GetButtonDown("Fire2"))
+            {
+                isFiringLaser = true;
+                StopCoroutine("FireLaser");
+                StartCoroutine("FireLaser");
+            }
+            else if (lentilleSpotLight_ID != -1)
+            {
+                lentille.Desactivate(lentilleSpotLight_ID);
+                lentilleSpotLight_ID = -1;
+            }
         }
     }
 
     IEnumerator FireLaser()
     {
+        float hit_Distance;
+
         line.enabled = true;
+        light.enabled = true;
 
-        //gameObject.light.enabled = true;
         PlanPosition_current = pc_Zac.playerPosition;
-
+        
         while (Input.GetButton("Fire2"))
         {
             //line.renderer.material.mainTextureOffset = new Vector2(0, Time.time);
@@ -70,16 +91,54 @@ public class LaserScript : MonoBehaviour {
 
             if (Physics.Raycast(rayFromGun, out hit, 100))
             {
+                if (lentilleSpotLight_ID == -1)
+                {
+                    if (hit.collider.tag == "Lentille")
+                    {
+                        lentille = hit.collider.GetComponent<Lentille>();
+                        lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.point - transform.position));
+                        light.enabled = false;
+                    }
+                    else if (hit.collider.tag == "Player")
+                    {
+                        line.enabled = false;
+                        light.enabled = false;
+                    }
+                    else
+                    {
+                        line.enabled = true;
+                        light.enabled = true;
+                    }
+                }
+                else if (hit.collider.tag != "Lentille")
+                {
+                    lentille.Desactivate(lentilleSpotLight_ID);
+                    lentilleSpotLight_ID = -1;
+                    light.enabled = true;
+                }
+                else
+                {
+                  
+                }
+
                 line.SetPosition(1, hit.point);
+                hit_Distance = Vector3.Distance(transform.position, hit.point);
+
+                //Update la position du point light, position juste avant le hit point de la line renderer
+                light.transform.position = rayFromGun.GetPoint(hit_Distance - 1F);
             }
             else
-                line.SetPosition(1, rayFromGun.GetPoint(10));
+            {
+                line.SetPosition(1, rayFromGun.GetPoint(15));
+                light.transform.position = rayFromGun.GetPoint(14.5F);
+            }
 
             yield return null;
         }
 
-        line.enabled = false;
-        //gameObject.GetComponent<Light>().enabled = false;
+        line.enabled = false; 
+        light.enabled = false;
+        isFiringLaser = false;
     }
 
     void UpdateLaserPlan()
