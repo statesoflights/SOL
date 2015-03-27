@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour {
         isGrounded = false;
         isDragging = false;
 
-        playerPosition = 1;
         verticalPace = 5;
+        playerPosition = (int)(transform.position.z / verticalPace);
     }
 
     void FixedUpdate()
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour {
         RaycastHit hit;
         Vector3 legposition = transform.position;
         legposition.y -= GetComponent<Collider>().bounds.extents.y;
+
         if (Physics.Raycast(legposition, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * GetComponent<Rigidbody>().velocity.y;

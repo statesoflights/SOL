@@ -14,7 +14,7 @@ public class LightEmitter : MonoBehaviour {
 
 
     private int lentilleSpotLight_ID;
-    private Lentille lentille;
+    public Lentille lentille;
 
 	void Start () {
         isInterruptor1_Active = false;
@@ -81,7 +81,6 @@ public class LightEmitter : MonoBehaviour {
 
     IEnumerator DrawLight()
     {
-
         line.enabled = true;
 
         while (canEmitLight)
@@ -91,7 +90,7 @@ public class LightEmitter : MonoBehaviour {
             RaycastHit hit;
 
             line.SetPosition(0, transform.position);
-
+            
             if (Physics.Raycast(rayToTarget, out hit, 100))
             {
                 line.SetPosition(1, hit.point);
@@ -108,6 +107,10 @@ public class LightEmitter : MonoBehaviour {
                 {
                     lentille.Desactivate(lentilleSpotLight_ID);
                     lentilleSpotLight_ID = -1;
+                }
+                else
+                {
+                    lentille.UpdateSpotLight(lentilleSpotLight_ID, Quaternion.LookRotation(hit.point - transform.position));
                 }
             }
             else

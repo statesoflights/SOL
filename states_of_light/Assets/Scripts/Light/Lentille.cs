@@ -27,8 +27,8 @@ public class Lentille : MonoBehaviour {
     }
      
 
-    public void UpdateSpotLight()
+    public void UpdateSpotLight(int index,Quaternion target_Pos)
     {
-
+        lights[index].transform.rotation = target_Pos;
     }
 }
