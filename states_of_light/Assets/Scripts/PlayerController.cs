@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace))
+		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace)&& ! hit.collider.isTrigger)
         {
 			if (hit.collider.tag == "Wall" )
             {
