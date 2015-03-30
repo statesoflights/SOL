@@ -15,6 +15,10 @@ public class Biggy : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		Fusion = true;
     }
+	void Start()
+	{
+		pc.jumpForce = 400;
+	}
 
     void FixedUpdate()
     {

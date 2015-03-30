@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     public bool isCurrentPlayer;
     public bool canSwitch;
 	public bool isDragging;
+	public int jumpForce;
 
     public int playerPosition;
     public int verticalPace;
@@ -33,16 +34,25 @@ public class PlayerController : MonoBehaviour {
     {
 		capsule = GetComponent<CapsuleCollider> ();
         animator = GetComponent<Animator>();
-
-        canSwitch = true;
-        isLookingRight = true;
-        isMovingVertically = false;
-        isGrounded = false;
-        isDragging = false;
-
-        playerPosition = 1;
-        verticalPace = 5;
     }
+
+	void Start()
+	{
+		canSwitch = true;
+		isLookingRight = true;
+		isMovingVertically = false;
+		isGrounded = false;
+		isDragging = false;
+
+
+		if (jumpForce == 0)
+		{
+			jumpForce = 300;
+		}
+		
+		verticalPace = 5;
+		playerPosition = (int)(transform.position.z / verticalPace);
+	}
 
     void FixedUpdate()
     {
@@ -68,7 +78,10 @@ public class PlayerController : MonoBehaviour {
     private void UpdateMovement()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
+        Vector3 legposition = transform.position;
+        legposition.y -= GetComponent<Collider>().bounds.extents.y;
+
+        if (Physics.Raycast(legposition, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * GetComponent<Rigidbody>().velocity.y;
         }
@@ -82,7 +95,7 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log ("isGrounded : " + isGrounded);
 			if (isGrounded)
 			{
-				GetComponent<Rigidbody>().AddForce(0, 300, 0);
+				GetComponent<Rigidbody>().AddForce(0, jumpForce, 0);
 				isGrounded = false;
 				canSwitch = false;
 			}
@@ -96,24 +109,8 @@ public class PlayerController : MonoBehaviour {
         animator.SetBool("directionUp", directionUp);
         animator.SetBool("isMovingVertically", isMovingVertically);
     }
-
-
-	//Retourne true si le perso peut se déplacer
-    private bool CanMoveVertically(Vector3 rayDirection)
-    {
-        RaycastHit hit;
-        Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 5.0F))
-        {
-			if (hit.collider.tag == "Wall" )
-            {
-                return false;
-			}
-		}
-		if(!Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y +0.1F))
-		   return false;
-        return true;
-    }
+	
+	
     private void VerticalMoveStart()
     {
         if (Input.GetAxis("Vertical") > 0 && playerPosition + 1 <= 2 && CanMoveVertically(transform.forward))
@@ -138,6 +135,24 @@ public class PlayerController : MonoBehaviour {
         StartCoroutine("VerticalGoto", gotoPosition);
     }
 
+
+	//Retourne true si le perso peut se déplacer verticalement
+    private bool CanMoveVertically(Vector3 rayDirection)
+    {
+        RaycastHit hit;
+        Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
+		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace))
+        {
+			if (hit.collider.tag == "Wall" )
+            {
+                return false;
+			}
+		}
+		if(!Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y +0.1F))
+		   return false;
+        return true;
+    }
+
     IEnumerator VerticalGoto(Vector3 target)
     {
         GetComponent<Rigidbody>().isKinematic = true;
@@ -149,7 +164,6 @@ public class PlayerController : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = false;
         isMovingVertically = false;
         canSwitch = true;
-
     }
 
 

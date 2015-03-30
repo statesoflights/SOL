@@ -4,6 +4,7 @@ using System.Collections;
 public class LaserScript : MonoBehaviour {
 
     LineRenderer line;
+    Light light;
     PlayerController pc_Zac;
 
     private Vector3 mouse;
@@ -12,13 +13,16 @@ public class LaserScript : MonoBehaviour {
     private int PlanPosition_min;
     private int PlanPosition_max;
 
+    public int lentilleSpotLight_ID;
+    private Lentille lentille;
+    public bool isFiringLaser;
 
     void Awake()
     {
         pc_Zac = transform.GetComponentInParent<PlayerController>();
+        light = transform.GetComponentInChildren<Light>();
     }
 
-    // Use this for initialization
     void Start()
     {
         line = gameObject.GetComponent<LineRenderer>();
@@ -26,60 +30,125 @@ public class LaserScript : MonoBehaviour {
         PlanPosition_min = 0;
         PlanPosition_max = 2;
 
-        //gameObject.light.enabled = false;
+        light.enabled = false;
         line.enabled = false;
+
+        lentilleSpotLight_ID = -1;
+        lentille = null;
+
+        isFiringLaser = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (!isFiringLaser)
         {
-            StopCoroutine("FireLaser"); 
-            StartCoroutine("FireLaser");
+            if (Input.GetButtonDown("Fire2"))
+            {
+                isFiringLaser = true;
+                StopCoroutine("FireLaser");
+                StartCoroutine("FireLaser");
+            }
+            else if (lentilleSpotLight_ID != -1)
+            {
+                lentille.Desactivate(lentilleSpotLight_ID);
+                lentilleSpotLight_ID = -1;
+            }
         }
     }
 
     IEnumerator FireLaser()
     {
-        line.enabled = true;
 
-        //gameObject.light.enabled = true;
+        line.enabled = true;
+        light.enabled = true;
+
         PlanPosition_current = pc_Zac.playerPosition;
 
         while (Input.GetButton("Fire2"))
         {
-            //line.renderer.material.mainTextureOffset = new Vector2(0, Time.time);
-
             UpdateLaserPlan();
 
-            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            mouse = RetrieveMousePosition();
 
-            float planeZ = PlanPosition_current * 5;
+            gameObject.transform.LookAt(mouse);
 
-            float distance = (planeZ - mouseRay.origin.z) / mouseRay.direction.z;
-
-            mouse = mouseRay.GetPoint(distance);
-
-            //Debug.Log(mouse);
-            //gameObject.transform.LookAt(mouse);
-            Ray rayFromGun = new Ray(transform.position, mouse - transform.position );
-            RaycastHit hit;
-
-            line.SetPosition(0, transform.position);
-
-            if (Physics.Raycast(rayFromGun, out hit, 100))
-            {
-                line.SetPosition(1, hit.point);
-            }
-            else
-                line.SetPosition(1, rayFromGun.GetPoint(10));
+            SetLinePositions();
 
             yield return null;
         }
 
         line.enabled = false;
-        //gameObject.GetComponent<Light>().enabled = false;
+        light.enabled = false;
+        isFiringLaser = false;
+    }
+
+    Vector3 RetrieveMousePosition()
+    {
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        float planeZ = PlanPosition_current * 5;
+
+        float distance = (planeZ - mouseRay.origin.z) / mouseRay.direction.z;
+
+        return mouseRay.GetPoint(distance);
+    }
+
+    void SetLinePositions()
+    {
+        line.SetPosition(0, transform.position);
+
+        Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(rayFromGun, out hit, 30F))
+        {
+            if (lentilleSpotLight_ID == -1)
+            {
+                if (hit.collider.tag == "Lentille")
+                {
+                    lentille = hit.collider.GetComponent<Lentille>();
+                    lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.point - transform.position));
+                    light.enabled = false;
+                }
+                else if (hit.collider.tag == "Player")
+                {
+                    line.enabled = false;
+                    light.enabled = false;
+                }
+                else
+                {
+                    line.enabled = true;
+                    light.enabled = true;
+                }
+            }
+            else if (hit.collider.tag != "Lentille")
+            {
+                lentille.Desactivate(lentilleSpotLight_ID);
+                lentilleSpotLight_ID = -1;
+                light.enabled = true;
+            }
+            else
+            {
+                lentille.UpdateSpotLight(lentilleSpotLight_ID, Quaternion.LookRotation(hit.point - transform.position));
+            }
+
+            line.SetPosition(1, hit.point);
+
+            //Update la position du point light, position juste avant le hit point de la line renderer
+            float hit_Distance = Vector3.Distance(transform.position, hit.point);
+            light.transform.position = rayFromGun.GetPoint(hit_Distance - 0.1F);
+        }
+        else
+        {
+            line.SetPosition(1, rayFromGun.GetPoint(20));
+            light.transform.position = rayFromGun.GetPoint(19.5F);
+
+            if (lentilleSpotLight_ID != -1)
+            {
+                lentille.Desactivate(lentilleSpotLight_ID);
+                lentilleSpotLight_ID = -1;
+            }
+        }
     }
 
     void UpdateLaserPlan()
