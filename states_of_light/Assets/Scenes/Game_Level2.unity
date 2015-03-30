@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1754344}
   - 212: {fileID: 1754345}
+  - 114: {fileID: 1754346}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -152,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1754343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.5, y: .970000029, z: 14.6829996}
+  m_LocalPosition: {x: 78.9000015, y: 1, z: 14.6999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 428984031}
@@ -183,6 +184,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300032, guid: 0f7a037c7fee40b45aa6083beec30332, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1754346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07275a1c4eb1ab949aea4f2552240e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6688110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1150,7 @@ GameObject:
   - 4: {fileID: 358943113}
   - 33: {fileID: 358943115}
   - 65: {fileID: 358943114}
+  - 114: {fileID: 358943116}
   m_Layer: 2
   m_Name: Trigger_garde3
   m_TagString: Trigger
@@ -1178,6 +1191,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 358943112}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &358943116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358943112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5373830c08e539349bc9bfe841e9e8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guard: {fileID: 1754346}
 --- !u!1 &379858786
 GameObject:
   m_PrefabParentObject: {fileID: 123028, guid: c717a9b99969a6b43a99c5b5561f0288, type: 2}
@@ -2753,6 +2778,7 @@ GameObject:
   - 4: {fileID: 1293462778}
   - 33: {fileID: 1293462780}
   - 65: {fileID: 1293462779}
+  - 114: {fileID: 1293462781}
   m_Layer: 2
   m_Name: Trigger_garde1
   m_TagString: Trigger
@@ -2793,6 +2819,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1293462777}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1293462781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293462777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5373830c08e539349bc9bfe841e9e8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guard: {fileID: 1754346}
 --- !u!1001 &1344513433
 Prefab:
   m_ObjectHideFlags: 0
@@ -3468,6 +3506,7 @@ GameObject:
   - 4: {fileID: 1686014627}
   - 33: {fileID: 1686014629}
   - 65: {fileID: 1686014628}
+  - 114: {fileID: 1686014630}
   m_Layer: 2
   m_Name: Trigger_garde2
   m_TagString: Trigger
@@ -3508,6 +3547,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686014626}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1686014630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1686014626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5373830c08e539349bc9bfe841e9e8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guard: {fileID: 1754346}
 --- !u!1 &1692189267
 GameObject:
   m_ObjectHideFlags: 0

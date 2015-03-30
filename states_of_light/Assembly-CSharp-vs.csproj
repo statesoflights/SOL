@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\GUI\Loading_Controller.cs" />
      <Compile Include="Assets\Scripts\GUI\MainMenu_GUI.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Guard\Guard_Detection.cs" />
+     <Compile Include="Assets\Scripts\Guard\Guard_Trigger.cs" />
      <Compile Include="Assets\Scripts\Light\LaserScript.cs" />
      <Compile Include="Assets\Scripts\Light\Lentille.cs" />
      <Compile Include="Assets\Scripts\Light\LightEmitter.cs" />
