@@ -1,39 +1,26 @@
 fileFormatVersion: 2
-guid: 0f7a037c7fee40b45aa6083beec30332
+guid: b0f59afde93142d48a7cef1aaa48b999
+timeCreated: 1427470883
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MageTeste_0
-    21300002: MageTeste_1
-    21300004: MageTeste_2
-    21300006: MageTeste_3
-    21300008: MageTeste_4
-    21300010: MageTeste_5
-    21300012: MageTeste_6
-    21300014: MageTeste_7
-    21300016: MageTeste_8
-    21300018: MageTeste_9
-    21300020: MageTeste_10
-    21300022: MageTeste_11
-    21300024: MageTeste_12
-    21300026: MageTeste_13
-    21300028: MageTeste_14
-    21300030: MageTeste_15
-    21300032: MageTest_0
-    21300034: MageTest_1
-    21300036: MageTest_2
-    21300038: MageTest_3
-    21300040: MageTest_4
-    21300042: MageTest_5
-    21300044: MageTest_6
-    21300046: MageTest_7
-    21300048: MageTest_8
-    21300050: MageTest_9
-    21300052: MageTest_10
-    21300054: MageTest_11
-    21300056: MageTest_12
-    21300058: MageTest_13
-    21300060: MageTest_14
-    21300062: MageTest_15
+    21300000: zack_course_166v2_0
+    21300002: zack_course_166v2_1
+    21300004: zack_course_166v2_2
+    21300006: zack_course_166v2_3
+    21300008: zack_course_166v2_4
+    21300010: zack_course_166v2_5
+    21300012: zack_course_166v2_6
+    21300014: zack_course_166v2_7
+    21300016: zack_course_166v2_8
+    21300018: zack_course_166v2_9
+    21300020: zack_course_166v2_10
+    21300022: zack_course_166v2_11
+    21300024: zack_course_166v2_12
+    21300026: zack_course_166v2_13
+    21300028: zack_course_166v2_14
+    21300030: zack_course_166v2_15
+    21300032: zack_course_166v2_16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,16 +39,20 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -69,171 +60,183 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 200
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: MageTest_0
+    - name: zack_course_166v2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 32
-        height: 48
+        y: 1748
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_1
+    - name: zack_course_166v2_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 144
-        width: 32
-        height: 48
+        x: 300
+        y: 1748
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_2
+    - name: zack_course_166v2_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 144
-        width: 32
-        height: 48
+        x: 600
+        y: 1748
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_3
+    - name: zack_course_166v2_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 144
-        width: 32
-        height: 48
+        x: 900
+        y: 1748
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_4
+    - name: zack_course_166v2_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 48
+        x: 1200
+        y: 1748
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_5
+    - name: zack_course_166v2_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 48
+        x: 1500
+        y: 1748
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_8
+    - name: zack_course_166v2_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 32
-        height: 48
+        y: 1448
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_9
+    - name: zack_course_166v2_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 32
-        height: 48
+        x: 300
+        y: 1448
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_10
+    - name: zack_course_166v2_8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 48
-        width: 32
-        height: 48
+        x: 600
+        y: 1448
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_11
+    - name: zack_course_166v2_9
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
-        width: 32
-        height: 48
+        x: 900
+        y: 1448
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_12
+    - name: zack_course_166v2_10
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1448
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_course_166v2_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1448
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_course_166v2_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 48
+        y: 1148
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_13
+    - name: zack_course_166v2_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 48
+        x: 300
+        y: 1148
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_14
+    - name: zack_course_166v2_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 48
+        x: 600
+        y: 1148
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MageTest_15
+    - name: zack_course_166v2_15
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 48
+        x: 900
+        y: 1148
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_course_166v2_16
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1148
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

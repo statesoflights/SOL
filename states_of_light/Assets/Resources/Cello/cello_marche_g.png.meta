@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: dc09dc2c5bc56cc4abb784f4befc4ee6
+timeCreated: 1427485735
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cello_marche_g__10
+    21300002: cello_marche_g__9
+    21300004: cello_marche_g__8
+    21300006: cello_marche_g__7
+    21300008: cello_marche_g__6
+    21300010: cello_marche_g__5
+    21300012: cello_marche_g__4
+    21300014: cello_marche_g__3
+    21300016: cello_marche_g__2
+    21300018: cello_marche_g__1
+    21300020: cello_marche_g__0
+    21300022: cello_marche_g__21
+    21300024: cello_marche_g__20
+    21300026: cello_marche_g__19
+    21300028: cello_marche_g__18
+    21300030: cello_marche_g__17
+    21300032: cello_marche_g__16
+    21300034: cello_marche_g__15
+    21300036: cello_marche_g__14
+    21300038: cello_marche_g__13
+    21300040: cello_marche_g__12
+    21300042: cello_marche_g__11
+    21300044: cello_marche_g__26
+    21300046: cello_marche_g__25
+    21300048: cello_marche_g__24
+    21300050: cello_marche_g__23
+    21300052: cello_marche_g__22
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: cello_marche_g__10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__8
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__7
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__6
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__5
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__4
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__3
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__2
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__1
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__0
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3525
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__20
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__19
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__18
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__17
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__16
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__15
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__14
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__13
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__12
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__11
+      rect:
+        serializedVersion: 2
+        x: 3496
+        y: 2958
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__26
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2391
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__25
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 2391
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__24
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2391
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__23
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 2391
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_g__22
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2391
+        width: 350
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

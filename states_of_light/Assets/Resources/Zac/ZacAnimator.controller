@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Player
+  m_Name: ZacAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: HorizontalSpeed
@@ -541,7 +541,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 3c98787b6c501ef4aae6fba6b77b8518, type: 2}
+  m_Motion: {fileID: 7400000, guid: 82b33c2515dcae946af4043e5aba28af, type: 2}
   m_Tag: 
 --- !u!1102 &110211362
 AnimatorState:
@@ -561,7 +561,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 969100cb4aa9f504d88a27c148743fee, type: 2}
+  m_Motion: {fileID: 7400000, guid: ae08feabb22a12e41b84891fce18ebfd, type: 2}
   m_Tag: 
 --- !u!1102 &110240878
 AnimatorState:
@@ -582,7 +582,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: add93e04083b04746bf5863ac8bb4058, type: 2}
+  m_Motion: {fileID: 7400000, guid: 73a16d218b8cc9642916f1625411ff27, type: 2}
   m_Tag: 
 --- !u!1102 &110264040
 AnimatorState:
@@ -601,7 +601,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: f8dc33caf1f255440b9e9a465b234d77, type: 2}
+  m_Motion: {fileID: 7400000, guid: 31cf947c18cd28a4f8e0783a1945644f, type: 2}
   m_Tag: 
 --- !u!1102 &110276844
 AnimatorState:
@@ -621,7 +621,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 84c8a2aaf280fff47aaac2094059ec4f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1c74e806c19f1604ca1b934bd5aa5502, type: 2}
   m_Tag: 
 --- !u!1102 &110277938
 AnimatorState:
@@ -640,7 +640,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: f3d5931016661dc42a98a136567c3bb2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 57345f12cd232914e85d9b654e48311a, type: 2}
   m_Tag: 
 --- !u!1107 &110786472
 AnimatorStateMachine:

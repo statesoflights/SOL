@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     public bool isGrounded;
     public bool isCurrentPlayer;
     public bool canSwitch;
-    public bool isDragging;
+	public bool isDragging;
 
     public int playerPosition;
     public int verticalPace;
@@ -75,11 +75,17 @@ public class PlayerController : MonoBehaviour {
         else
             GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal") * 5, GetComponent<Rigidbody>().velocity.y);
 
-        if (Input.GetButton("Jump") && isGrounded)
+
+        if (Input.GetButton("Jump"))
         {
-            GetComponent<Rigidbody>().AddForce(0, 300, 0);
-            isGrounded = false;
-            canSwitch = false;
+			Debug.Log ("Input.GetButton(Jump) : " + Input.GetButton ("Jump"));
+			Debug.Log ("isGrounded : " + isGrounded);
+			if (isGrounded)
+			{
+				GetComponent<Rigidbody>().AddForce(0, 300, 0);
+				isGrounded = false;
+				canSwitch = false;
+			}
         }
     }
     private void UpdateAnimator()
@@ -97,11 +103,10 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace))
+		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, 5.0F))
         {
 			if (hit.collider.tag == "Wall" )
             {
-                Debug.Log(hit.collider);
                 return false;
 			}
 		}
@@ -167,16 +172,31 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y+0.1F) &&
-            (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
-        {
-            isGrounded = true;
-            canSwitch = true;
+//        if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.6F) &&
+//            (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
+		Debug.DrawRay (transform.position, -Vector3.up);
+		Debug.Log ("DrawRay");
+		Debug.Log ("Radius : " + Radius);
+		Debug.Log ("GetComponent<Collider>().bounds.extents.y : " + GetComponent<Collider>().bounds.extents.y);
+		//if (Physics.SphereCast(new Ray(transform.position, -Vector3.up), Radius, GetComponent<Collider>().bounds.extents.y + 800F))
+		if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.1F))
+		{
+			Debug.Log ("1er if");
+			if (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall")
+			{
+				isGrounded = true;
+				canSwitch = true;
+				Debug.Log ("isGrounded : " + isGrounded);
+			}
+            
         }
 	}
 
 	void OnCollisionExit(Collision collisionInfo)
     {
-        if (collisionInfo.gameObject.tag == "Floor") isGrounded = false;
+        if (collisionInfo.gameObject.tag == "Floor")
+		{
+			isGrounded = false;
+		}
     }
 }

@@ -4,11 +4,16 @@ using System.Collections;
 public class Biggy : MonoBehaviour {
 
     public GameObject playerSmall;
+	public bool Fusion;
+
+	private Animator animator;
     private PlayerController pc;
 
     void Awake()
     {
         pc = GetComponent<PlayerController>();
+		animator = GetComponent<Animator>();
+		Fusion = true;
     }
 
     void FixedUpdate()
@@ -21,6 +26,8 @@ public class Biggy : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift) && pc.isGrounded) DragObject();
         else pc.isDragging = false;
+
+		animator.SetBool("Fusion", Fusion); //Utilisé pour changer l'affichage de Cello : avec ou sans Zac
     }
 
     private void RecallSmall()
