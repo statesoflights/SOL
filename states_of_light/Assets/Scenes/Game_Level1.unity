@@ -8837,7 +8837,7 @@ Prefab:
     - target: {fileID: 21200000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 083a969db008cb846a2e18ef226f0c2c,
+      objectReference: {fileID: 21300000, guid: 92f9812a2f1be424ab3171853b381deb,
         type: 3}
     - target: {fileID: 9500000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_Controller
@@ -14320,6 +14320,7 @@ MonoBehaviour:
   isCurrentPlayer: 0
   canSwitch: 0
   isDragging: 0
+  jumpForce: 0
   playerPosition: 0
   verticalPace: 0
 --- !u!54 &2145322589
@@ -14348,7 +14349,7 @@ Animator:
   m_GameObject: {fileID: 2145322585}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e7e42a256e19e7347ab7736d5da4565b, type: 2}
+  m_Controller: {fileID: 9100000, guid: faff13a8cd989e5448089bddbdbceb0a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14381,7 +14382,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300048, guid: 0f7a037c7fee40b45aa6083beec30332, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5344a307bfea01341820ab72a18e1724, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2145322592
 Transform:
