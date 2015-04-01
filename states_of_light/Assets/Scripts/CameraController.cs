@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour {
     private Vector3 translateDestination;
 	private ArrayList listElementTransparent = new ArrayList();
 
+	public Material matOpaque;
+	public Material matTransparent;
     public float speed;
 
     void Start()
@@ -32,9 +34,10 @@ public class CameraController : MonoBehaviour {
 		{
 			SpriteRenderer rend = (SpriteRenderer) listElementTransparent[j];
 			if (rend) {
-				Color tempColor = rend.color;
-				tempColor.a = 1F;
-				rend.color = tempColor;
+				rend.sharedMaterial = matOpaque;
+//				Color tempColor = rend.color;
+//				tempColor.a = 1F;
+//				rend.color = tempColor;
 			}
 		}
 		listElementTransparent.Clear();
@@ -50,9 +53,11 @@ public class CameraController : MonoBehaviour {
 			SpriteRenderer[] spriteRenderers = hit.collider.GetComponentsInChildren<SpriteRenderer>();
 			foreach (SpriteRenderer rend in spriteRenderers) {
 				if (rend) {
-					Color tempColor = rend.color;
-					tempColor.a = 0.3F;
-					rend.color = tempColor;
+					rend.sharedMaterial = matTransparent;
+//					Debug.Log ("TRANSPARENT BITCH");
+//					Color tempColor = rend.color;
+//					tempColor.a = 0.3F;
+//					rend.color = tempColor;
 				}
 				listElementTransparent.Add(rend);
 			}
