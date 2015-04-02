@@ -16,6 +16,7 @@ public class LaserScript : MonoBehaviour {
     public int lentilleSpotLight_ID;
     private Lentille lentille;
     public bool isFiringLaser;
+	public bool canFire;
 
     void Awake()
     {
@@ -37,6 +38,7 @@ public class LaserScript : MonoBehaviour {
         lentille = null;
 
         isFiringLaser = false;
+		canFire = true;
     }
 
     void Update()
@@ -45,9 +47,7 @@ public class LaserScript : MonoBehaviour {
         {
             if (Input.GetButtonDown("Fire2"))
             {
-                isFiringLaser = true;
-                StopCoroutine("FireLaser");
-                StartCoroutine("FireLaser");
+				CheckClickedPoint();
             }
             else if (lentilleSpotLight_ID != -1)
             {
@@ -56,20 +56,62 @@ public class LaserScript : MonoBehaviour {
             }
         }
     }
+	void CheckClickedPoint()
+	{
+		for(int i =0;i<5;i++)
+		{
+			mouse = RetrieveMousePosition(i);
+			Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
+			RaycastHit hit;
+			if (Physics.Raycast(rayFromGun, out hit, 30F)&& 
+			    (hit.collider.tag == "Lentille" || hit.collider.tag == "LaserTrigger"))
+			{
+				if(hit.collider.tag == "LaserTrigger")
+					hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+				isFiringLaser = true;
+				PlanPosition_current = i;
+				StopCoroutine("FireLaser");
+				StartCoroutine("FireLaser");
+				return;
+			}
+
+			/*
+			RaycastHit[] hits;
+			hits =Physics.RaycastAll (rayFromGun, 30F);
+			for (int y = 0; y < hits.Length; y++) {
+				RaycastHit hit = hits [y];
+				if (hit.collider.tag == "Lentille") {
+					foreach (SpriteRenderer rend in spriteRenderers) {
+						if (rend) {
+							rend.sharedMaterial = matTransparent;
+							//					Debug.Log ("TRANSPARENT BITCH");
+							//					Color tempColor = rend.color;
+							//					tempColor.a = 0.3F;
+							//					rend.color = tempColor;
+						}
+						listElementTransparent.Add (rend);
+					}
+					//SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();		
+				}
+			}*/
+
+
+		}
+
+	}
 
     IEnumerator FireLaser()
     {
-
         line.enabled = true;
         light.enabled = true;
-
+		canFire = true;
         PlanPosition_current = pc_Zac.playerPosition;
 
-        while (Input.GetButton("Fire2"))
+        while (canFire)
         {
             UpdateLaserPlan();
 
-            mouse = RetrieveMousePosition();
+			//mouse = RetrieveMousePosition(PlanPosition_current);
 
             gameObject.transform.LookAt(mouse);
 
@@ -83,11 +125,11 @@ public class LaserScript : MonoBehaviour {
         isFiringLaser = false;
     }
 
-    Vector3 RetrieveMousePosition()
+    Vector3 RetrieveMousePosition(int PlanPosition)
     {
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        float planeZ = PlanPosition_current * 5;
+		float planeZ = PlanPosition * 2.5F;
 
         float distance = (planeZ - mouseRay.origin.z) / mouseRay.direction.z;
 
@@ -107,21 +149,15 @@ public class LaserScript : MonoBehaviour {
                 if (hit.collider.tag == "Lentille")
                 {
                     lentille = hit.collider.GetComponent<Lentille>();
-                    lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.point - transform.position));
+					lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.transform.position - transform.position));
                     light.enabled = false;
                 }
-                else if (hit.collider.tag == "Player")
-                {
-                    line.enabled = false;
-                    light.enabled = false;
-                }
-                else
-                {
-                    line.enabled = true;
-                    light.enabled = true;
-                }
+				if(hit.collider.tag == "LaserTrigger")
+				{
+					//StartCoroutine("hit.collider.GetComponent<Trigger_Laser>().StartAnim()");
+				}
             }
-            else if (hit.collider.tag != "Lentille")
+			else if (hit.collider.tag != "Lentille" && hit.collider.tag != "LaserTrigger")
             {
                 lentille.Desactivate(lentilleSpotLight_ID);
                 lentilleSpotLight_ID = -1;
@@ -129,10 +165,10 @@ public class LaserScript : MonoBehaviour {
             }
             else
             {
-                lentille.UpdateSpotLight(lentilleSpotLight_ID, Quaternion.LookRotation(hit.point - transform.position));
+				lentille.UpdateSpotLight(lentilleSpotLight_ID, Quaternion.LookRotation(hit.transform.position - transform.position));
             }
 
-            line.SetPosition(1, hit.point);
+            line.SetPosition(1, hit.transform.position);
 
             //Update la position du point light, position juste avant le hit point de la line renderer
             float hit_Distance = Vector3.Distance(transform.position, hit.point);

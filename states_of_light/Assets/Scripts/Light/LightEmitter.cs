@@ -19,7 +19,7 @@ public class LightEmitter : MonoBehaviour {
 	void Start () {
         isInterruptor1_Active = false;
         isInterruptor2_Active = false;
-        canEmitLight = false;
+        //canEmitLight = false;
 
         line = GetComponent<LineRenderer>();
         line.enabled = false;

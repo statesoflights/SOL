@@ -31,12 +31,16 @@ public class Biggy : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) && pc.isGrounded) DragObject();
         else pc.isDragging = false;
 
-		animator.SetBool("Fusion", Fusion); //Utilisé pour changer l'affichage de Cello : avec ou sans Zac
-    }
+		if (!pc.isCurrentPlayer &&!pc.isMovingVertically) 
+			Fusion = false;
+		
+		animator.SetBool ("Fusion", Fusion);
+	}
 
     private void RecallSmall()
     {
         playerSmall.GetComponent<Small>().StartFollowPlayerAnim();
+		Fusion = true;
     }
 
     private void DragObject()

@@ -9,10 +9,12 @@ public class Small : MonoBehaviour {
     public bool canFollow;
     public bool isFollowing;
     private Vector3 posFollow;
+	private SpriteRenderer sr;
 
     void Awake()
     {
         pc = GetComponent<PlayerController>();
+		sr = GetComponent<SpriteRenderer> ();
     }
 
 	void Start () 
@@ -24,6 +26,12 @@ public class Small : MonoBehaviour {
     {
         if (isFollowing)
             FollowPlayer();
+		if (pc.isCurrentPlayer && (transform.position.z==0 ||transform.position.z==5 ||transform.position.z==10 )) 
+		{
+			Vector3 temp = transform.position;
+			temp.z -=0.2F;
+			transform.position = temp;
+		}
 	}
 
     void Init()
@@ -41,6 +49,7 @@ public class Small : MonoBehaviour {
         pc.isGrounded = false;
 		pc.canSwitch = false;
         isFollowing = true;
+		sr.enabled = false;
 
         FollowPlayer();
     }
