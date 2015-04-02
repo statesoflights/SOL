@@ -60,6 +60,7 @@ public class LaserScript : MonoBehaviour {
 	{
 		for(int i =0;i<5;i++)
 		{
+            Debug.Log("Here");
 			mouse = RetrieveMousePosition(i);
 			Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
 			RaycastHit hit;
@@ -70,6 +71,7 @@ public class LaserScript : MonoBehaviour {
 					hit.collider.GetComponent<Trigger_Laser>().StartAnim();
 				isFiringLaser = true;
 				PlanPosition_current = i;
+                Debug.Log("Firelaser " + i); 
 				StopCoroutine("FireLaser");
 				StartCoroutine("FireLaser");
 				return;

@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Lentille : MonoBehaviour {
 
-    private List<GameObject> lights;
+    public List<GameObject> lights;
     public GameObject object_spotlight;
 
     void Awake()
