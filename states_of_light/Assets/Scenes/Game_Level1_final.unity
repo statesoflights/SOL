@@ -4032,13 +4032,13 @@ Transform:
   - {fileID: 1151216014}
   - {fileID: 350692660}
   - {fileID: 1297686264}
-  - {fileID: 2125936593}
+  - {fileID: 2119143274}
   - {fileID: 1533963482}
   - {fileID: 730937498}
   - {fileID: 765273261}
   - {fileID: 814501757}
   - {fileID: 1446465845}
-  - {fileID: 2119143274}
+  - {fileID: 2125936593}
   - {fileID: 2117814177}
   - {fileID: 1404728010}
   - {fileID: 1280740932}
@@ -10585,7 +10585,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 105
+      value: 103.699997
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.y
@@ -13884,6 +13884,22 @@ Prefab:
       propertyPath: m_Size.x
       value: 2.9000001
       objectReference: {fileID: 0}
+    - target: {fileID: 125530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 21254988, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21254988, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21254988, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
   m_IsPrefabParent: 0
@@ -16378,7 +16394,7 @@ Transform:
   m_LocalScale: {x: .300000012, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 463876260}
-  m_RootOrder: 16
+  m_RootOrder: 10
 --- !u!212 &2119143275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16433,7 +16449,7 @@ Transform:
   m_LocalScale: {x: .5, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 463876260}
-  m_RootOrder: 10
+  m_RootOrder: 16
 --- !u!212 &2125936594
 SpriteRenderer:
   m_ObjectHideFlags: 0

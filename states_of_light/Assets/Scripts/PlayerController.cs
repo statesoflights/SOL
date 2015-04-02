@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour {
     IEnumerator VerticalGoto(Vector3 target)
     {
         GetComponent<Rigidbody>().isKinematic = true;
-        while (Vector3.Distance(transform.position, target) > 0.05f)
+        while (Vector3.Distance(transform.position, target) > 0.1f)
         {
             transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
             yield return null;

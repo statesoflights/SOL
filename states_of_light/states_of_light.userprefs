@@ -1,32 +1,6 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraController.cs">
-    <Files>
-      <File FileName="Assets\Scripts\CameraController.cs" Line="13" Column="8" />
-      <File FileName="Assets\Scripts\Light\LightEmitter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Small.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Biggy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Environment\Trigger1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Environment\Trigger_Interruptor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Light\Lentille.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Light\LaserScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Environment\DragableStone.cs" Line="1" Column="1" />
-      <File FileName="Assets\Shaders\TransparentCutout.shader" Line="1" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
-    <Files>
-      <File FileName="Assets\Shaders\TransparentCutout.shader" Line="9" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="79" Column="1" />
-      <File FileName="Assets\Scripts\Player\Small.cs" Line="16" Column="47" />
-      <File FileName="Assets\Scripts\Player\Biggy.cs" Line="34" Column="51" />
-      <File FileName="Assets\Scripts\Environment\Niveau1_Script_Machine.cs" Line="17" Column="27" />
->>>>>>> ccbfa83d115c03d3970199488292fc7ccae8deec
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
