@@ -64,7 +64,9 @@
      <Compile Include="Assets\Scripts\Player\Biggy.cs" />
      <Compile Include="Assets\Scripts\Player\Small.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Shaders\BumpedSprites\BumpedSprite.cs" />
      <None Include="Assets\Shaders\TransparentCutout.shader" />
+     <None Include="Assets\Shaders\BumpedSprites\BumpedSprite.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
