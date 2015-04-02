@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour {
     public bool isCurrentPlayer;
     public bool canSwitch;
 	public bool isDragging;
+	public bool isJumping;
 	public int jumpForce;
 
     public int playerPosition;
     public int verticalPace;
 
-	private CapsuleCollider capsule;
+	private CapsuleCollider capsule;	
+	private SpriteRenderer sr;
 
 	//Retourne le rayon du capsule collider du perso, qui permettra de faire un sphereCast pour savoir si le perso peut changer de plan
 	public float Radius
@@ -33,7 +35,8 @@ public class PlayerController : MonoBehaviour {
     void Awake()
     {
 		capsule = GetComponent<CapsuleCollider> ();
-        animator = GetComponent<Animator>();
+		animator = GetComponent<Animator>();
+		sr = GetComponent<SpriteRenderer> ();
     }
 
 	void Start()
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 		isMovingVertically = false;
 		isGrounded = false;
 		isDragging = false;
-
+		isJumping = false;
 
 		if (jumpForce == 0)
 		{
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour {
 		
 		verticalPace = 5;
 		playerPosition = (int)(transform.position.z / verticalPace);
+		sr.sortingOrder = -(playerPosition * verticalPace);
 	}
 
     void FixedUpdate()
@@ -79,9 +83,9 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         Vector3 legposition = transform.position;
-        legposition.y -= GetComponent<Collider>().bounds.extents.y;
+        legposition.y -= GetComponent<Collider>().bounds.extents.y-0.1F;
 
-        if (Physics.Raycast(legposition, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && hit.collider.tag == "Wall" && !hit.collider.isTrigger)
+        if (Physics.Raycast(legposition, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && (hit.collider.tag == "Wall"||hit.collider.tag == "Statue") && !hit.collider.isTrigger)
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * GetComponent<Rigidbody>().velocity.y;
         }
@@ -91,13 +95,11 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButton("Jump"))
         {
-			Debug.Log ("Input.GetButton(Jump) : " + Input.GetButton ("Jump"));
-			Debug.Log ("isGrounded : " + isGrounded);
-			if (isGrounded)
+			if (!isJumping && isGrounded)
 			{
 				GetComponent<Rigidbody>().AddForce(0, jumpForce, 0);
-				isGrounded = false;
 				canSwitch = false;
+				isJumping = true;
 			}
         }
     }
@@ -161,6 +163,8 @@ public class PlayerController : MonoBehaviour {
             transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
             yield return null;
         }
+		sr.sortingOrder = -(playerPosition * verticalPace);
+		transform.position = target;
         GetComponent<Rigidbody>().isKinematic = false;
         isMovingVertically = false;
         canSwitch = true;
@@ -173,6 +177,7 @@ public class PlayerController : MonoBehaviour {
 		GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         isCurrentPlayer = true;
+		sr.enabled = true;
     }
 
     public void DesactivatePlayer()
@@ -188,21 +193,15 @@ public class PlayerController : MonoBehaviour {
     {
 //        if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.6F) &&
 //            (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
-		Debug.DrawRay (transform.position, -Vector3.up);
-		Debug.Log ("DrawRay");
-		Debug.Log ("Radius : " + Radius);
-		Debug.Log ("GetComponent<Collider>().bounds.extents.y : " + GetComponent<Collider>().bounds.extents.y);
-		//if (Physics.SphereCast(new Ray(transform.position, -Vector3.up), Radius, GetComponent<Collider>().bounds.extents.y + 800F))
+		//if (Physics.SphereCast(new Ray(transform.position, -Vector3.up), Radius, GetComponent<Collider>().bounds.extents.y+0.1F -Radius))
 		if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.1F))
 		{
-			Debug.Log ("1er if");
 			if (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall")
 			{
 				isGrounded = true;
 				canSwitch = true;
-				Debug.Log ("isGrounded : " + isGrounded);
-			}
-            
+				isJumping = false;
+			}            
         }
 	}
 
@@ -212,5 +211,10 @@ public class PlayerController : MonoBehaviour {
 		{
 			isGrounded = false;
 		}
+		if (Physics.SphereCast(new Ray(transform.position, -Vector3.up), Radius, GetComponent<Collider>().bounds.extents.y+0.1F -Radius))
+		{     
+			isGrounded = false; 
+		}
+
     }
 }

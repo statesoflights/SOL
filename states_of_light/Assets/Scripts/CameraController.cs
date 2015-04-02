@@ -47,21 +47,22 @@ public class CameraController : MonoBehaviour {
 		RaycastHit[] hits;
 		hits = Physics.RaycastAll(transform.position, directionCamPlayer, distanceCamPlayer - 1.0F);
 
-		for (int i = 0;i < hits.Length;i++) 
-		{
-			RaycastHit hit = hits[i];
-			SpriteRenderer[] spriteRenderers = hit.collider.GetComponentsInChildren<SpriteRenderer>();
-			foreach (SpriteRenderer rend in spriteRenderers) {
-				if (rend) {
-					rend.sharedMaterial = matTransparent;
+		for (int i = 0; i < hits.Length; i++) {
+			RaycastHit hit = hits [i];
+			SpriteRenderer[] spriteRenderers = hit.collider.GetComponentsInChildren<SpriteRenderer> ();
+			if (hit.collider.tag != "Statue") {
+				foreach (SpriteRenderer rend in spriteRenderers) {
+					if (rend) {
+						rend.sharedMaterial = matTransparent;
 //					Debug.Log ("TRANSPARENT BITCH");
 //					Color tempColor = rend.color;
 //					tempColor.a = 0.3F;
 //					rend.color = tempColor;
+					}
+					listElementTransparent.Add (rend);
 				}
-				listElementTransparent.Add(rend);
+				//SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();		
 			}
-			//SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();		
 		}
 	}
 
