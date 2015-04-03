@@ -1060,6 +1060,14 @@ Prefab:
       propertyPath: matTransparent
       value: 
       objectReference: {fileID: 2100000, guid: c3d0f084942e570409186334cb208d2a, type: 2}
+    - target: {fileID: 11400000, guid: c9a3d619f10b8f54bb1f644f86ccf41d, type: 2}
+      propertyPath: Xmin
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c9a3d619f10b8f54bb1f644f86ccf41d, type: 2}
+      propertyPath: Xmax
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9a3d619f10b8f54bb1f644f86ccf41d, type: 2}
   m_IsPrefabParent: 0

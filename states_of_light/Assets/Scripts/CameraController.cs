@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour {
 	public Material matOpaque;
 	public Material matTransparent;
     public float speed;
+	public float Xmin;
+	public float Xmax;
 
     void Start()
     {
@@ -69,6 +71,10 @@ public class CameraController : MonoBehaviour {
     private void MoveCamera()
     {
         transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
+		Vector3 newPositionMinMax = transform.position;
+		if (transform.position.x <= Xmin) newPositionMinMax.x = Xmin;
+		if (transform.position.x >= Xmax) newPositionMinMax.x = Xmax;
+		transform.position = newPositionMinMax;
     }
 
     private void MoveTowardPlayer()
