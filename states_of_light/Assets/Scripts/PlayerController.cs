@@ -211,7 +211,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			isGrounded = false;
 		}
-		if (Physics.SphereCast(new Ray(transform.position, -Vector3.up), Radius, GetComponent<Collider>().bounds.extents.y+0.1F -Radius))
+        if (!Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.1F))
 		{     
 			isGrounded = false; 
 		}
