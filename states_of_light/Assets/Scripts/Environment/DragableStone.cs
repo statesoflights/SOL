@@ -25,7 +25,6 @@ public class DragableStone : MonoBehaviour {
     }
     public void IsDragged(Vector3 gotoPos)
     {
-        Debug.Log(canBeDragged);
         GetComponent<Rigidbody>().isKinematic = true;
         if (gotoPos.x <= max_x+0.1F && gotoPos.x >= min_x)
             transform.position = gotoPos;

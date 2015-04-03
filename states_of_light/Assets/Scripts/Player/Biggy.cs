@@ -19,7 +19,8 @@ public class Biggy : MonoBehaviour {
     }
 	void Start()
 	{
-		pc.jumpForce = 350;
+		pc.jumpForce = 200;
+        pc.speed = 3;
 	}
 
     void FixedUpdate()

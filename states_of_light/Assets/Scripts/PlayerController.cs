@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
     public bool canSwitch;
 	public bool isDragging;
 	public bool isJumping;
+
+    public int speed;
 	public int jumpForce;
 
     public int playerPosition;
@@ -49,9 +51,9 @@ public class PlayerController : MonoBehaviour {
 		isJumping = false;
 
 		if (jumpForce == 0)
-		{
 			jumpForce = 300;
-		}
+        if (speed == 0)
+            speed = 5;
 		
 		verticalPace = 5;
 		playerPosition = (int)(transform.position.z / verticalPace);
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour {
             GetComponent<Rigidbody>().velocity = Vector3.up * GetComponent<Rigidbody>().velocity.y;
         }
         else
-            GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal") * 5, GetComponent<Rigidbody>().velocity.y);
+            GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal") * speed, GetComponent<Rigidbody>().velocity.y);
 
 
         if (Input.GetButton("Jump"))
