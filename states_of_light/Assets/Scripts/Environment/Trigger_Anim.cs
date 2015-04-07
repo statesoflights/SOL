@@ -7,7 +7,7 @@ public class Trigger_Anim : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("Player") && Input.GetButtonDown("Action"))
+        if (other.tag.Equals("Player") && Input.GetButton("Action"))
         {
             anim.SetBool("Trigger", true);
         }

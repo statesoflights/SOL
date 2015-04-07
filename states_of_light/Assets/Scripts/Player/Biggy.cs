@@ -36,7 +36,8 @@ public class Biggy : MonoBehaviour {
 					Input.GetButtonDown ("RecallSmallPlayer"))
 					RecallSmall ();
 
-				if (Input.GetKeyDown (KeyCode.LeftShift)) {
+                if (Input.GetButtonDown("Action"))
+                {
 					StopCoroutine (DragObject ());
 					StartCoroutine (DragObject ());
 				}
@@ -96,7 +97,7 @@ public class Biggy : MonoBehaviour {
         bool isSeeingObject = true;
         pc.isDragging = true;
 
-        while (Input.GetKey(KeyCode.LeftShift) && pc.isGrounded && isSeeingObject)
+        while (Input.GetButton("Action") && pc.isGrounded && isSeeingObject)
         {
 			if (pc.isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 1))
             {
