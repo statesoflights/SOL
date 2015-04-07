@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 962c944e7a4317e45b6d266fdf01c04d
+timeCreated: 1428416598
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cello_marche_droit_567_0
+    21300002: cello_marche_droit_567_1
+    21300004: cello_marche_droit_567_2
+    21300006: cello_marche_droit_567_3
+    21300008: cello_marche_droit_567_4
+    21300010: cello_marche_droit_567_5
+    21300012: cello_marche_droit_567_6
+    21300014: cello_marche_droit_567_7
+    21300016: cello_marche_droit_567_8
+    21300018: cello_marche_droit_567_9
+    21300020: cello_marche_droit_567_10
+    21300022: cello_marche_droit_567_11
+    21300024: cello_marche_droit_567_12
+    21300026: cello_marche_droit_567_13
+    21300028: cello_marche_droit_567_14
+    21300030: cello_marche_droit_567_15
+    21300032: cello_marche_droit_567_16
+    21300034: cello_marche_droit_567_17
+    21300036: cello_marche_droit_567_18
+    21300038: cello_marche_droit_567_19
+    21300040: cello_marche_droit_567_20
+    21300042: cello_marche_droit_567_21
+    21300044: cello_marche_droit_567_22
+    21300046: cello_marche_droit_567_23
+    21300048: cello_marche_droit_567_24
+    21300050: cello_marche_droit_567_25
+    21300052: cello_marche_droit_567_26
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: cello_marche_droit_567_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_2
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_3
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_4
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_5
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_6
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_7
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_8
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_9
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_10
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3526
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_12
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_13
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_14
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_15
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_16
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_17
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_18
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_19
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_20
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_21
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2956
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2386
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_23
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 2386
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_24
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2386
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_25
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 2386
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_marche_droit_567_26
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2386
+        width: 350
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

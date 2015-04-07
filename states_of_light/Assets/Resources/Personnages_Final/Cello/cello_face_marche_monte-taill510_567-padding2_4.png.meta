@@ -1,0 +1,330 @@
+fileFormatVersion: 2
+guid: d10d336c8950a63469007cf36fd629a2
+timeCreated: 1428417624
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cello_face_marche_monte-taill510_567-padding2_4_0
+    21300002: cello_face_marche_monte-taill510_567-padding2_4_1
+    21300004: cello_face_marche_monte-taill510_567-padding2_4_2
+    21300006: cello_face_marche_monte-taill510_567-padding2_4_3
+    21300008: cello_face_marche_monte-taill510_567-padding2_4_4
+    21300010: cello_face_marche_monte-taill510_567-padding2_4_5
+    21300012: cello_face_marche_monte-taill510_567-padding2_4_6
+    21300014: cello_face_marche_monte-taill510_567-padding2_4_8
+    21300016: cello_face_marche_monte-taill510_567-padding2_4_9
+    21300018: cello_face_marche_monte-taill510_567-padding2_4_10
+    21300020: cello_face_marche_monte-taill510_567-padding2_4_11
+    21300022: cello_face_marche_monte-taill510_567-padding2_4_12
+    21300024: cello_face_marche_monte-taill510_567-padding2_4_13
+    21300026: cello_face_marche_monte-taill510_567-padding2_4_14
+    21300028: cello_face_marche_monte-taill510_567-padding2_4_16
+    21300030: cello_face_marche_monte-taill510_567-padding2_4_17
+    21300032: cello_face_marche_monte-taill510_567-padding2_4_18
+    21300034: cello_face_marche_monte-taill510_567-padding2_4_19
+    21300036: cello_face_marche_monte-taill510_567-padding2_4_20
+    21300038: cello_face_marche_monte-taill510_567-padding2_4_21
+    21300040: cello_face_marche_monte-taill510_567-padding2_4_22
+    21300042: cello_face_marche_monte-taill510_567-padding2_4_24
+    21300044: cello_face_marche_monte-taill510_567-padding2_4_25
+    21300046: cello_face_marche_monte-taill510_567-padding2_4_26
+    21300048: cello_face_marche_monte-taill510_567-padding2_4_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: cello_face_marche_monte-taill510_567-padding2_4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3529
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_12
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_13
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_14
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2958
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_19
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_20
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_21
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_22
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2387
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1816
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1816
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1816
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_face_marche_monte-taill510_567-padding2_4_27
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1816
+        width: 510
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

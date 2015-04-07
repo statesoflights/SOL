@@ -16,6 +16,6 @@ public class Loading_Controller : MonoBehaviour {
     IEnumerator Loading()
     {
         yield return new WaitForSeconds(waiting_Time);
-        Application.LoadLevel(2);
+        Application.LoadLevel(3);
     }
 }

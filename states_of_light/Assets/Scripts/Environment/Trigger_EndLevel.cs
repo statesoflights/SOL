@@ -7,7 +7,7 @@ public class Trigger_EndLevel : MonoBehaviour {
 	{
 		if (other.tag.Equals("Player"))
 		{			
-			Application.LoadLevel(1);
+			Application.LoadLevel(2);
 		}
 	}
 }
