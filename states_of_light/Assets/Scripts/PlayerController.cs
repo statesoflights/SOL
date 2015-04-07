@@ -14,15 +14,18 @@ public class PlayerController : MonoBehaviour {
     public bool canSwitch;
 	public bool isDragging;
 	public bool isJumping;
+	public bool isCLimbing;
 
     public int speed;
 	public int jumpForce;
 
     public int playerPosition;
     public int verticalPace;
+	public float goToSpeed;
 
 	private CapsuleCollider capsule;	
 	private SpriteRenderer sr;
+	private Rigidbody rb;
 
 	//Retourne le rayon du capsule collider du perso, qui permettra de faire un sphereCast pour savoir si le perso peut changer de plan
 	public float Radius
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 		capsule = GetComponent<CapsuleCollider> ();
 		animator = GetComponent<Animator>();
 		sr = GetComponent<SpriteRenderer> ();
+		rb = GetComponent<Rigidbody> ();
     }
 
 	void Start()
@@ -49,12 +53,15 @@ public class PlayerController : MonoBehaviour {
 		isGrounded = false;
 		isDragging = false;
 		isJumping = false;
+		isCLimbing = false;
+
 
 		if (jumpForce == 0)
 			jumpForce = 300;
         if (speed == 0)
             speed = 5;
-		
+
+		goToSpeed = 4.0F;
 		verticalPace = 5;
 		playerPosition = (int)(transform.position.z / verticalPace);
 		sr.sortingOrder = -(playerPosition * verticalPace);
@@ -64,7 +71,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (isCurrentPlayer)
         {
-            if (!isMovingVertically)
+			if (!isMovingVertically && !isCLimbing)
             {
                 if (!isDragging)
                 {
@@ -89,17 +96,17 @@ public class PlayerController : MonoBehaviour {
 
         if (Physics.Raycast(legposition, Vector3.right * Input.GetAxis("Horizontal"), out hit, GetComponent<Collider>().bounds.extents.x + 0.1F) && (hit.collider.tag == "Wall"||hit.collider.tag == "Statue") && !hit.collider.isTrigger)
         {
-            GetComponent<Rigidbody>().velocity = Vector3.up * GetComponent<Rigidbody>().velocity.y;
+			rb.velocity = Vector3.up * rb.velocity.y;
         }
         else
-            GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal") * speed, GetComponent<Rigidbody>().velocity.y);
+			rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
 
 
         if (Input.GetButton("Jump"))
         {
 			if (!isJumping && isGrounded)
 			{
-				GetComponent<Rigidbody>().AddForce(0, jumpForce, 0);
+				rb.AddForce(0, jumpForce, 0);
 				canSwitch = false;
 				isJumping = true;
 			}
@@ -129,7 +136,7 @@ public class PlayerController : MonoBehaviour {
         }
         else return;
 
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
         Vector3 gotoPosition = transform.position;
         gotoPosition.z = (playerPosition * verticalPace);
 
@@ -159,25 +166,25 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator VerticalGoto(Vector3 target)
     {
-        GetComponent<Rigidbody>().isKinematic = true;
+        rb.isKinematic = true;
         while (Vector3.Distance(transform.position, target) > 0.1f)
         {
-            transform.position = Vector3.Lerp(transform.position, target, 4 * Time.deltaTime / Vector3.Distance(transform.position, target));
+            transform.position = Vector3.Lerp(transform.position, target, goToSpeed * Time.deltaTime / Vector3.Distance(transform.position, target));
             yield return null;
         }
 		sr.sortingOrder = -(playerPosition * verticalPace);
 		transform.position = target;
-        GetComponent<Rigidbody>().isKinematic = false;
+        rb.isKinematic = false;
         isMovingVertically = false;
         canSwitch = true;
-    }
+	}
 
 
     public void ActivatePlayer()
 	{
-		GetComponent<Rigidbody>().isKinematic = false;
-		GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+		rb.isKinematic = false;
+		rb.useGravity = true;
+        rb.velocity = Vector3.zero;
         isCurrentPlayer = true;
 		sr.enabled = true;
     }
@@ -188,7 +195,7 @@ public class PlayerController : MonoBehaviour {
         animator.SetFloat("HorizontalSpeed", 0F);
 
         //reset the movedirection of the player when idle
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 
     void OnCollisionEnter(Collision collision)

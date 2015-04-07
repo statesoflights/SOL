@@ -10,34 +10,38 @@ public class Biggy : MonoBehaviour {
     private PlayerController pc;
 
     public float dragDistance;
-
+	private Collider collider;
     void Awake()
     {
         pc = GetComponent<PlayerController>();
 		animator = GetComponent<Animator>();
+		collider = GetComponent<Collider> ();
 		Fusion = true;
     }
 	void Start()
 	{
-		pc.jumpForce = 200;
+		pc.jumpForce = 250;
         pc.speed = 3;
 	}
 
     void FixedUpdate()
     {
-        if (pc.isGrounded)
-        {
-            if (!playerSmall.GetComponent<Small>().isFollowing &&
-                Input.GetButtonDown("RecallSmallPlayer") &&
-                pc.isCurrentPlayer)
-                RecallSmall();
+		if (pc.isCurrentPlayer) {
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                StopCoroutine(DragObject());
-                StartCoroutine(DragObject());
-            }
-        }
+			if (!pc.isCLimbing && Input.GetButton ("Horizontal")) {
+				CanClimbWall();
+			}
+			if (pc.isGrounded) {
+				if (!playerSmall.GetComponent<Small> ().isFollowing &&
+					Input.GetButtonDown ("RecallSmallPlayer"))
+					RecallSmall ();
+
+				if (Input.GetKeyDown (KeyCode.LeftShift)) {
+					StopCoroutine (DragObject ());
+					StartCoroutine (DragObject ());
+				}
+			}
+		}
 
 		if (!pc.isCurrentPlayer &&!pc.isMovingVertically) 
 			Fusion = false;
@@ -51,35 +55,39 @@ public class Biggy : MonoBehaviour {
 		Fusion = true;
     }
 
-    //private void DragObject()
-    //{
-    //    RaycastHit hit;
-    //    if (pc.isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, GetComponent<Collider>().bounds.extents.x + 1))
-    //    {
-    //        if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
-    //        {
-    //            Vector3 temp_pos = hit.collider.transform.position;
-    //            temp_pos.x = transform.position.x;
-    //            temp_pos.x += GetComponent<Collider>().bounds.extents.x + hit.collider.bounds.extents.x + 0.3F;
+	void CanClimbWall()
+	{
+		Vector3 headPosition = transform.position;
+		headPosition.y += collider.bounds.extents.y-0.1F;
+		Vector3 lookDirection = Input.GetAxis ("Horizontal")>=0 ? transform.right : -transform.right;
 
-    //            hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
-    //            pc.isDragging = true;
-    //        }
-    //    }
-    //    else
-    //        if (!pc.isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, GetComponent<Collider>().bounds.extents.x + 0.3f))
-    //        {
-    //            if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
-    //            {
-    //                Vector3 temp_pos = hit.collider.transform.position;
-    //                temp_pos.x = transform.position.x;
-    //                temp_pos.x -= GetComponent<Collider>().bounds.extents.x + hit.collider.bounds.extents.x + 0.2F;
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, lookDirection, out hit, collider.bounds.extents.x + 0.1F)) 
+		{
+			if (!Physics.Raycast (headPosition, lookDirection, collider.bounds.extents.x + 0.1F)) 
+			{
+				StopCoroutine("ClimbWall");
+				StartCoroutine("ClimbWall",hit);
+			}
+		}
+	}
 
-    //                hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
-    //                pc.isDragging = true;
-    //            }
-    //        }
-    //}
+	IEnumerator ClimbWall(RaycastHit hit)
+	{
+		pc.isCLimbing = true;
+		//animator.Play("WallClimb_Right");
+		Vector3 targetSize = hit.collider.GetComponent<BoxCollider> ().center + hit.collider.bounds.size;
+		Vector3 destinationpos = transform.position;
+		destinationpos.y = hit.collider.transform.position.y +(targetSize.y/2)+ collider.bounds.extents.y ;
+		destinationpos.x += Input.GetAxis ("Horizontal")>=0 ? collider.bounds.size.x : -collider.bounds.size.x;
+
+		//yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+		pc.goToSpeed = 2.0F;
+		yield return pc.StartCoroutine ("VerticalGoto", destinationpos);
+		pc.goToSpeed = 4.0F;
+		pc.isCLimbing = false;
+	}
+
     IEnumerator DragObject()
     {
 
@@ -90,14 +98,14 @@ public class Biggy : MonoBehaviour {
 
         while (Input.GetKey(KeyCode.LeftShift) && pc.isGrounded && isSeeingObject)
         {
-            if (pc.isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, GetComponent<Collider>().bounds.extents.x + 1))
+			if (pc.isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 1))
             {
                 if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
                 {
                     if (dragDistance == 0)
                         dragDistance = hit.collider.transform.position.x - transform.position.x;
 
-                    minDistance = GetComponent<Collider>().bounds.extents.x + hit.collider.bounds.extents.x + 0.15F;
+					minDistance = collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.15F;
                     if (dragDistance <= minDistance)
                         dragDistance = minDistance;
 
@@ -107,14 +115,14 @@ public class Biggy : MonoBehaviour {
                 }
             }
             else
-                if (!pc.isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, GetComponent<Collider>().bounds.extents.x + 1f))
+				if (!pc.isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 1f))
                 {
                     if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
                     {
                         if (dragDistance == 0)
                             dragDistance = transform.position.x - hit.collider.transform.position.x;
 
-                        minDistance = GetComponent<Collider>().bounds.extents.x + hit.collider.bounds.extents.x + 0.2F;
+						minDistance = collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.2F;
                         if (dragDistance <= minDistance)
                             dragDistance = minDistance;
 
