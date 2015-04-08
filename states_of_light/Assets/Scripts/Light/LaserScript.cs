@@ -45,7 +45,7 @@ public class LaserScript : MonoBehaviour {
     {
         if (!isFiringLaser)
         {
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2") && !isFiringLaser)
             {
 				CheckClickedPoint();
             }
@@ -60,24 +60,26 @@ public class LaserScript : MonoBehaviour {
 	{
 		for(int i =0;i<5;i++)
 		{
-            Debug.Log("Here");
 			mouse = RetrieveMousePosition(i);
 			Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
 			RaycastHit hit;
 			if (Physics.Raycast(rayFromGun, out hit, 30F)&& 
 			    (hit.collider.tag == "Lentille" || hit.collider.tag == "LaserTrigger"))
 			{
+                Debug.Log(hit.collider);
 				if(hit.collider.tag == "LaserTrigger")
 					hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+
 				isFiringLaser = true;
 				PlanPosition_current = i;
-                Debug.Log("Firelaser " + i); 
+
 				StopCoroutine("FireLaser");
 				StartCoroutine("FireLaser");
 				return;
 			}
+            #region Old code
 
-			/*
+            /*
 			RaycastHit[] hits;
 			hits =Physics.RaycastAll (rayFromGun, 30F);
 			for (int y = 0; y < hits.Length; y++) {
@@ -96,7 +98,8 @@ public class LaserScript : MonoBehaviour {
 					//SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();		
 				}
 			}*/
-
+            
+            #endregion
 
 		}
 
@@ -105,7 +108,7 @@ public class LaserScript : MonoBehaviour {
     IEnumerator FireLaser()
     {
         line.enabled = true;
-        light.enabled = true;
+        //light.enabled = true;
 		canFire = true;
         PlanPosition_current = pc_Zac.playerPosition;
 
@@ -154,16 +157,12 @@ public class LaserScript : MonoBehaviour {
 					lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.transform.position - transform.position));
                     light.enabled = false;
                 }
-				if(hit.collider.tag == "LaserTrigger")
-				{
-					//StartCoroutine("hit.collider.GetComponent<Trigger_Laser>().StartAnim()");
-				}
             }
 			else if (hit.collider.tag != "Lentille" && hit.collider.tag != "LaserTrigger")
             {
                 lentille.Desactivate(lentilleSpotLight_ID);
                 lentilleSpotLight_ID = -1;
-                light.enabled = true;
+                //light.enabled = true;
             }
             else
             {

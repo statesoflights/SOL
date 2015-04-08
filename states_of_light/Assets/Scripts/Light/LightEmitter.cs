@@ -52,7 +52,7 @@ public class LightEmitter : MonoBehaviour {
         else
             isInterruptor2_Active = true;
 
-        if (!canEmitLight && isInterruptor1_Active && isInterruptor2_Active)
+        if (!canEmitLight && (isInterruptor1_Active || isInterruptor2_Active))
         {
             canEmitLight = true;
 
@@ -67,7 +67,7 @@ public class LightEmitter : MonoBehaviour {
         else
             isInterruptor2_Active = false;
 
-        if (!isInterruptor1_Active || !isInterruptor2_Active)
+        if (!isInterruptor1_Active && !isInterruptor2_Active)
         {
             canEmitLight = false;
 

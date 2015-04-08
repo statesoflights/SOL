@@ -14,7 +14,7 @@ SubShader {
 	Cull OFF
 	
 CGPROGRAM
-#pragma surface surf BlinnPhong alphatest:_Cutoff
+#pragma surface surf BlinnPhong alphatest:_Cutoff addshadow
 #pragma target 3.0
 
 sampler2D _MainTex;

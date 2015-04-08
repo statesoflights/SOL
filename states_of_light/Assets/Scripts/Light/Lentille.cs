@@ -25,6 +25,11 @@ public class Lentille : MonoBehaviour {
         Destroy(lights[index]);
         lights.RemoveAt(index);
     }
+
+    //public void Desactivate(string id)
+    //{
+    //    lights.Find(O => O.id == id).SetActive(false);
+    //}
      
 
     public void UpdateSpotLight(int index,Quaternion target_Pos)
