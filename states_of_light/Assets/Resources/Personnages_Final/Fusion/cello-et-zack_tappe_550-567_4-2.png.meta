@@ -1,9 +1,32 @@
 fileFormatVersion: 2
 guid: 6d15185e76aaa3b488fe2e855105eb46
-timeCreated: 1428414073
+timeCreated: 1428469840
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: cello-et-zack_tappe_550-567_4-2_0
+    21300002: cello-et-zack_tappe_550-567_4-2_1
+    21300004: cello-et-zack_tappe_550-567_4-2_2
+    21300006: cello-et-zack_tappe_550-567_4-2_3
+    21300008: cello-et-zack_tappe_550-567_4-2_4
+    21300010: cello-et-zack_tappe_550-567_4-2_5
+    21300012: cello-et-zack_tappe_550-567_4-2_6
+    21300014: cello-et-zack_tappe_550-567_4-2_7
+    21300016: cello-et-zack_tappe_550-567_4-2_8
+    21300018: cello-et-zack_tappe_550-567_4-2_9
+    21300020: cello-et-zack_tappe_550-567_4-2_10
+    21300022: cello-et-zack_tappe_550-567_4-2_11
+    21300024: cello-et-zack_tappe_550-567_4-2_12
+    21300026: cello-et-zack_tappe_550-567_4-2_13
+    21300028: cello-et-zack_tappe_550-567_4-2_14
+    21300030: cello-et-zack_tappe_550-567_4-2_15
+    21300032: cello-et-zack_tappe_550-567_4-2_16
+    21300034: cello-et-zack_tappe_550-567_4-2_17
+    21300036: cello-et-zack_tappe_550-567_4-2_18
+    21300038: cello-et-zack_tappe_550-567_4-2_19
+    21300040: cello-et-zack_tappe_550-567_4-2_20
+    21300042: cello-et-zack_tappe_550-567_4-2_21
+    21300044: cello-et-zack_tappe_550-567_4-2_22
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,7 +71,237 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: cello-et-zack_tappe_550-567_4-2_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_1
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_2
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_3
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_4
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_5
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_6
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 3522
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_7
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_8
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_9
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_10
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_11
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_12
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_13
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 2946
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_14
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_15
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_16
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_17
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_18
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_19
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_20
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 2370
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_21
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1794
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_tappe_550-567_4-2_22
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1794
+        width: 550
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

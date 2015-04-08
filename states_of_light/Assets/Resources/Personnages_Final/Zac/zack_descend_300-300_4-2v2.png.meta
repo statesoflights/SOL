@@ -1,9 +1,43 @@
 fileFormatVersion: 2
 guid: f8f4fe23f32afaf42a0ea2195619419b
-timeCreated: 1428422155
+timeCreated: 1428467316
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: zack_descend_300-300_4-2v2_0
+    21300002: zack_descend_300-300_4-2v2_1
+    21300004: zack_descend_300-300_4-2v2_2
+    21300006: zack_descend_300-300_4-2v2_3
+    21300008: zack_descend_300-300_4-2v2_4
+    21300010: zack_descend_300-300_4-2v2_5
+    21300012: zack_descend_300-300_4-2v2_6
+    21300014: zack_descend_300-300_4-2v2_7
+    21300016: zack_descend_300-300_4-2v2_8
+    21300018: zack_descend_300-300_4-2v2_9
+    21300020: zack_descend_300-300_4-2v2_10
+    21300022: zack_descend_300-300_4-2v2_11
+    21300024: zack_descend_300-300_4-2v2_12
+    21300026: zack_descend_300-300_4-2v2_13
+    21300028: zack_descend_300-300_4-2v2_14
+    21300030: zack_descend_300-300_4-2v2_15
+    21300032: zack_descend_300-300_4-2v2_16
+    21300034: zack_descend_300-300_4-2v2_17
+    21300036: zack_descend_300-300_4-2v2_18
+    21300038: zack_descend_300-300_4-2v2_19
+    21300040: zack_descend_300-300_4-2v2_20
+    21300042: zack_descend_300-300_4-2v2_21
+    21300044: zack_descend_300-300_4-2v2_22
+    21300046: zack_descend_300-300_4-2v2_23
+    21300048: zack_descend_300-300_4-2v2_24
+    21300050: zack_descend_300-300_4-2v2_25
+    21300052: zack_descend_300-300_4-2v2_26
+    21300054: zack_descend_300-300_4-2v2_27
+    21300056: zack_descend_300-300_4-2v2_28
+    21300058: zack_descend_300-300_4-2v2_29
+    21300060: zack_descend_300-300_4-2v2_30
+    21300062: zack_descend_300-300_4-2v2_31
+    21300064: zack_descend_300-300_4-2v2_32
+    21300066: zack_descend_300-300_4-2v2_33
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,29 +60,369 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: zack_descend_300-300_4-2v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1748
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1748
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_2
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1748
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_3
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1748
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_4
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1748
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_5
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1748
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1446
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1446
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_8
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1446
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_9
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1446
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_10
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1446
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_11
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1446
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1144
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_13
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1144
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_14
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1144
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_15
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1144
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_16
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1144
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_17
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1144
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 842
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_19
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 842
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_20
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 842
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_21
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 842
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_22
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 842
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_23
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 842
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_25
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 540
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_26
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 540
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_27
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 540
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_28
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 540
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_29
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 540
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_31
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 238
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_32
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 238
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zack_descend_300-300_4-2v2_33
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 238
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

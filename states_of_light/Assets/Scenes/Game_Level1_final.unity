@@ -2014,7 +2014,7 @@ GameObject:
   - 65: {fileID: 138339003}
   - 114: {fileID: 138339002}
   - 114: {fileID: 138339001}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger_machine_13
   m_TagString: Trigger
   m_Icon: {fileID: 0}
@@ -14539,7 +14539,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: .0299999993
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17618,8 +17618,12 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 79cccd5e2d3ec384cb8bd9a755e2536d, type: 2}
     - target: {fileID: 21200000, guid: d0b8067bf1a9f3047a76942fcbdf1c06, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d0b8067bf1a9f3047a76942fcbdf1c06, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cc3336c257c8ce24083e0c35c78f6f90, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0b8067bf1a9f3047a76942fcbdf1c06, type: 2}
   m_IsPrefabParent: 0
@@ -18267,7 +18271,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 62
+      value: 190.699997
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.y
@@ -18324,6 +18328,14 @@ Prefab:
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1d8821eb4585b0e4f9960cad05bb1c7d, type: 2}
+    - target: {fileID: 11400002, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
+      propertyPath: Fusion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
@@ -22437,7 +22449,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: .0299999993
       objectReference: {fileID: 0}
     - target: {fileID: 9525530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
       propertyPath: m_Enabled
@@ -22835,6 +22847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 674556102}
+  punchabelObject: 1
 --- !u!65 &1613900464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24441,7 +24454,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: .0299999993
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 21b19d239354a1041b89dd39461939e2, type: 2}
       propertyPath: m_LocalRotation.x

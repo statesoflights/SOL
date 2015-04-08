@@ -11,12 +11,15 @@ public class Biggy : MonoBehaviour {
 
     public float dragDistance;
 	private Collider collider;
+	public bool isHitting;
+
     void Awake()
     {
         pc = GetComponent<PlayerController>();
 		animator = GetComponent<Animator>();
 		collider = GetComponent<Collider> ();
 		Fusion = true;
+		isHitting = false;
     }
 	void Start()
 	{
@@ -28,7 +31,7 @@ public class Biggy : MonoBehaviour {
     {
 		if (pc.isCurrentPlayer) {
 
-			if (!pc.isCLimbing && Input.GetButton ("Horizontal")) {
+			if (!pc.isCLimbing && !pc.isDragging && Input.GetButton ("Horizontal")) {
 				CanClimbWall();
 			}
 			if (pc.isGrounded) {
@@ -55,6 +58,13 @@ public class Biggy : MonoBehaviour {
         playerSmall.GetComponent<Small>().StartFollowPlayerAnim();
 		Fusion = true;
     }
+
+	IEnumerator HitStart(Trigger_Anim target)
+	{		
+		animator.SetBool("Hit", true);
+		yield return animator.GetCurrentAnimatorClipInfo (0).Length;
+		target.StartAnim ();
+	}
 
 	void CanClimbWall()
 	{
@@ -95,15 +105,21 @@ public class Biggy : MonoBehaviour {
         RaycastHit hit;
         float minDistance;
         bool isSeeingObject = true;
-        pc.isDragging = true;
+		bool pushDirection = pc.isLookingRight;
 
         while (Input.GetButton("Action") && pc.isGrounded && isSeeingObject)
         {
-			if (pc.isLookingRight && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 1))
+			if ( pushDirection && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 1f))
             {
                 if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
-                {
-                    if (dragDistance == 0)
+				{
+					pc.isDragging = true;
+
+					animator.SetBool("isDragging", true);
+					if(animator.GetCurrentAnimatorStateInfo(0).IsName( "Push_Right_Fusion"))
+						animator.speed = Input.GetAxis("Horizontal");
+
+					if (dragDistance == 0)
                         dragDistance = hit.collider.transform.position.x - transform.position.x;
 
 					minDistance = collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.15F;
@@ -116,11 +132,17 @@ public class Biggy : MonoBehaviour {
                 }
             }
             else
-				if (!pc.isLookingRight && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 1f))
+				if (!pushDirection && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 1f))
                 {
                     if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
-                    {
-                        if (dragDistance == 0)
+				{				
+					pc.isDragging = true;
+
+						animator.SetBool("isDragging", true);
+						if(animator.GetCurrentAnimatorStateInfo(0).IsName( "Push_Right_Fusion"))
+							animator.speed = -Input.GetAxis("Horizontal");
+
+						if (dragDistance == 0)
                             dragDistance = transform.position.x - hit.collider.transform.position.x;
 
 						minDistance = collider.bounds.extents.x + hit.collider.bounds.extents.x + 0.2F;
@@ -131,14 +153,17 @@ public class Biggy : MonoBehaviour {
                         temp_pos.x = transform.position.x - dragDistance;
                         hit.collider.GetComponent<DragableStone>().IsDragged(temp_pos);
                     }
-                }
+			}
                 else
-                    isSeeingObject = false;
+				isSeeingObject = false;
+
 
             yield return null;
         }
-
-        pc.isDragging = false;
+		
+		animator.speed = 1;
+		animator.SetBool("isDragging", false);
+		pc.isDragging = false;
         dragDistance = 0;
     }
 }

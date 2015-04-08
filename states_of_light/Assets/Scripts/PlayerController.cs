@@ -72,18 +72,26 @@ public class PlayerController : MonoBehaviour {
         if (isCurrentPlayer)
         {
 			if (!isMovingVertically && !isCLimbing)
-            {
-                if (!isDragging)
-                {
-                    if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01) isLookingRight = true;
-                    else if (Input.GetAxis("Horizontal") < -0.01) isLookingRight = false;
-                }
+            {         
+                if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01) 
+				{
+					isLookingRight = true;
+					if (!isDragging)
+					transform.localScale = Vector3.one;
+				}
+                else if (Input.GetAxis("Horizontal") < -0.01) 
+				{
+					isLookingRight = false;
+					if (!isDragging)
+					transform.localScale = Vector3.one + 2*Vector3.left;
+				}
+                
 
                 UpdateMovement();
 
                 if (Input.GetAxis("Vertical") != 0 && isGrounded)
                     VerticalMoveStart();
-            }
+			}
             UpdateAnimator();
         }
     }
@@ -114,11 +122,11 @@ public class PlayerController : MonoBehaviour {
     }
     private void UpdateAnimator()
     {
-        animator.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
+		animator.SetFloat("HorizontalSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));
         animator.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
         animator.SetBool("isLookingRight", isLookingRight);
         animator.SetBool("directionUp", directionUp);
-        animator.SetBool("isMovingVertically", isMovingVertically);
+        animator.SetBool("isMovingVertically", isMovingVertically);	
     }
 	
 	

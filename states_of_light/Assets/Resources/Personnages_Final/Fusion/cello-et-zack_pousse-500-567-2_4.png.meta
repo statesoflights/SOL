@@ -1,9 +1,36 @@
 fileFormatVersion: 2
 guid: 961626d04c0211f4a8e8b1c8f6b35356
-timeCreated: 1428422154
+timeCreated: 1428460704
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: cello-et-zack_pousse-500-567-2_4_0
+    21300002: cello-et-zack_pousse-500-567-2_4_1
+    21300004: cello-et-zack_pousse-500-567-2_4_2
+    21300006: cello-et-zack_pousse-500-567-2_4_3
+    21300008: cello-et-zack_pousse-500-567-2_4_4
+    21300010: cello-et-zack_pousse-500-567-2_4_5
+    21300012: cello-et-zack_pousse-500-567-2_4_6
+    21300014: cello-et-zack_pousse-500-567-2_4_7
+    21300016: cello-et-zack_pousse-500-567-2_4_8
+    21300018: cello-et-zack_pousse-500-567-2_4_9
+    21300020: cello-et-zack_pousse-500-567-2_4_10
+    21300022: cello-et-zack_pousse-500-567-2_4_11
+    21300024: cello-et-zack_pousse-500-567-2_4_12
+    21300026: cello-et-zack_pousse-500-567-2_4_13
+    21300028: cello-et-zack_pousse-500-567-2_4_14
+    21300030: cello-et-zack_pousse-500-567-2_4_15
+    21300032: cello-et-zack_pousse-500-567-2_4_16
+    21300034: cello-et-zack_pousse-500-567-2_4_17
+    21300036: cello-et-zack_pousse-500-567-2_4_18
+    21300038: cello-et-zack_pousse-500-567-2_4_19
+    21300040: cello-et-zack_pousse-500-567-2_4_20
+    21300042: cello-et-zack_pousse-500-567-2_4_21
+    21300044: cello-et-zack_pousse-500-567-2_4_22
+    21300046: cello-et-zack_pousse-500-567-2_4_23
+    21300048: cello-et-zack_pousse-500-567-2_4_24
+    21300050: cello-et-zack_pousse-500-567-2_4_25
+    21300052: cello-et-zack_pousse-500-567-2_4_26
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,25 +57,295 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: cello-et-zack_pousse-500-567-2_4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_1
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_2
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_3
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_4
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_5
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_6
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_7
+      rect:
+        serializedVersion: 2
+        x: 3514
+        y: 3528
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_9
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_10
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_11
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_12
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_13
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_14
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_15
+      rect:
+        serializedVersion: 2
+        x: 3514
+        y: 2956
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_18
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_19
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_20
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_21
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_22
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_23
+      rect:
+        serializedVersion: 2
+        x: 3514
+        y: 2384
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1812
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_25
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1812
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_pousse-500-567-2_4_26
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 1812
+        width: 500
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
