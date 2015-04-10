@@ -26,16 +26,11 @@ public class Guard_Trigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Player") )
+        if ((other.tag.Equals("Player") || other.tag.Equals("PlayerSmall")) && guard.isActive)
         {
             countDetected++;
             //StopCoroutine("WaitfewSecs");
             StartCoroutine("WaitfewSecs",other);
-        }
-        if (other.tag.Equals("PlayerSmall"))
-        {
-            countDetected++;
-            StartCoroutine("WaitfewSecs", other);
         }
     }
 

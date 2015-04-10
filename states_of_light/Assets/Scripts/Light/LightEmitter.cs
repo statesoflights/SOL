@@ -39,7 +39,7 @@ public class LightEmitter : MonoBehaviour {
         }
         else if (lentilleSpotLight_ID != -1)
         {
-            lentille.Desactivate("Lentille");
+            lentille.Desactivate("LightEmitter");
             lentilleSpotLight_ID = -1;
         }
 
