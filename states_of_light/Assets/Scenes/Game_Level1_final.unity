@@ -6254,7 +6254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &463876260
 Transform:
   m_ObjectHideFlags: 0
@@ -8143,6 +8143,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11417624, guid: ee41ff8143ecf9a44a8b9ad890e6dfb4, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 195640, guid: ee41ff8143ecf9a44a8b9ad890e6dfb4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee41ff8143ecf9a44a8b9ad890e6dfb4, type: 2}
   m_IsPrefabParent: 0
@@ -9617,6 +9625,7 @@ Transform:
   - {fileID: 1259511143}
   - {fileID: 1161880057}
   - {fileID: 2071221205}
+  - {fileID: 1132372558}
   m_Father: {fileID: 76060851}
   m_RootOrder: 8
 --- !u!65 &684818067
@@ -14876,6 +14885,72 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: caf56af1c46b592478f0957876e292dc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1132372557
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 684818066}
+    m_Modifications:
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.40999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.105999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .252000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 113180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_Name
+      value: Stone5_medium 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21213180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21213180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1132372558
+Transform:
+  m_PrefabParentObject: {fileID: 413180, guid: c5a2644018ea566408ae7f2b205e7dd1, type: 2}
+  m_PrefabInternal: {fileID: 1132372557}
 --- !u!1001 &1137268705
 Prefab:
   m_ObjectHideFlags: 0
@@ -17250,7 +17325,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.93000007
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 77ee12b99d233ef4fa8e0cd17d660086, type: 2}
       propertyPath: m_LocalPosition.y

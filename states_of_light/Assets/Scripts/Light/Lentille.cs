@@ -41,13 +41,15 @@ public class Lentille : MonoBehaviour {
         GameObject temp_lo = lights.Find(O => O.id == index).spotlight;
         temp_lo.transform.rotation = target_Pos;
 
-        if (isTrigger && Mathf.Abs(transform.position.x-playerSmall.transform.position.x)<=0.2F)
+		if (isTrigger && Mathf.Abs(transform.position.x-playerSmall.transform.position.x)<=0.5F && playerSmall.transform.position.z < 1)
             isTriggered();
     }
 
     public void isTriggered()
     {
         Target.GetComponent<Guard_Detection>().isActive = false;
-        Target.GetComponent<SpriteRenderer>().enabled = false;
+        //Target.GetComponent<SpriteRenderer>().enabled = false;
+		Target.GetComponent<Guard_Detection>().hasSeenShadow = true;
+
     }
 }
