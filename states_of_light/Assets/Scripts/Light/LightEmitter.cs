@@ -39,7 +39,7 @@ public class LightEmitter : MonoBehaviour {
         }
         else if (lentilleSpotLight_ID != -1)
         {
-            lentille.Desactivate(lentilleSpotLight_ID);
+            lentille.Desactivate("LightEmitter");
             lentilleSpotLight_ID = -1;
         }
 
@@ -100,17 +100,17 @@ public class LightEmitter : MonoBehaviour {
                     if (hit.collider.tag == "Lentille")
                     {
                         lentille = hit.collider.GetComponent<Lentille>();
-                        lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.point - transform.position));
+                        lentilleSpotLight_ID = lentille.Activate(Quaternion.LookRotation(hit.point - transform.position),"LightEmitter");
                     }
                 }
                 else if (hit.collider.tag != "Lentille")
                 {
-                    lentille.Desactivate(lentilleSpotLight_ID);
+                    lentille.Desactivate("LightEmitter");
                     lentilleSpotLight_ID = -1;
                 }
                 else
                 {
-                    lentille.UpdateSpotLight(lentilleSpotLight_ID, Quaternion.LookRotation(hit.point - transform.position));
+                    lentille.UpdateSpotLight("LightEmitter", Quaternion.LookRotation(hit.point - transform.position));
                 }
             }
             else

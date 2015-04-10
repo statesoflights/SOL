@@ -3,18 +3,20 @@ using System.Collections;
 
 public class Small : MonoBehaviour {
 
-    public GameObject playerBiggy;
+    public Transform playerBiggy;
 
     private PlayerController pc;
     public bool canFollow;
     public bool isFollowing;
     private Vector3 posFollow;
 	private SpriteRenderer sr;
+    private Collider collider;
 
     void Awake()
     {
         pc = GetComponent<PlayerController>();
 		sr = GetComponent<SpriteRenderer> ();
+        collider = GetComponent<Collider>();
     }
 
 	void Start () 
@@ -51,17 +53,34 @@ public class Small : MonoBehaviour {
         isFollowing = true;
 		sr.enabled = false;
 
-        FollowPlayer();
+        StopCoroutine("FollowPlayer");
+        StartCoroutine("FollowPlayer");
     }
 
-    private void FollowPlayer()
+    IEnumerator FollowPlayer()
     {
-		pc.playerPosition = playerBiggy.GetComponent<PlayerController> ().playerPosition;
-        posFollow = playerBiggy.transform.position;
-        posFollow.y = playerBiggy.transform.position.y + 
-            (playerBiggy.GetComponent<CapsuleCollider>().height / 2) + 
-            (GetComponent<CapsuleCollider>().height * transform.localScale.y / 2);
+        PlayerController pc_Biggy = playerBiggy.GetComponent<PlayerController>();
+        Collider collider_Biggy = playerBiggy.GetComponent<Collider>();
+        while (isFollowing)
+        {
+            pc.playerPosition = pc_Biggy.playerPosition;
+            posFollow = playerBiggy.position;
+            posFollow.y = playerBiggy.position.y +
+                collider_Biggy.bounds.extents.y -
+                collider.bounds.extents.y;
 
-        transform.position = posFollow;
+            //		posFollow.y = playerBiggy.position.y + 
+            //			(playerBiggy.GetComponent<CapsuleCollider>().height / 2) + 
+            //				(GetComponent<CapsuleCollider>().height * transform.localScale.y / 2);
+
+            transform.position = posFollow;
+
+            if (pc.isLookingRight != pc_Biggy.isLookingRight)
+            {
+                pc.isLookingRight = pc_Biggy.isLookingRight;
+                transform.localScale = playerBiggy.lossyScale;
+            }
+            yield return null;
+        }
     }
 }

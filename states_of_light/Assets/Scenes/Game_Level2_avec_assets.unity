@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07275a1c4eb1ab949aea4f2552240e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
 --- !u!1 &6688110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guard: {fileID: 1754346}
+  wait_time: 0
+  countDetected: 0
 --- !u!1 &379858786
 GameObject:
   m_PrefabParentObject: {fileID: 123028, guid: c717a9b99969a6b43a99c5b5561f0288, type: 2}
@@ -1184,8 +1187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d133de6d8817e1a4d8ccfb3c76ca1ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lights: []
   object_spotlight: {fileID: 195364, guid: aa41b0970b21b714c800ce60e4c8041e, type: 2}
+  playerSmall: {fileID: 0}
+  isTrigger: 0
+  Target: {fileID: 0}
 --- !u!23 &379858789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2822,6 +2827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guard: {fileID: 1754346}
+  wait_time: 0
+  countDetected: 0
 --- !u!1001 &1344513433
 Prefab:
   m_ObjectHideFlags: 0
@@ -3567,6 +3574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guard: {fileID: 1754346}
+  wait_time: 0
+  countDetected: 0
 --- !u!1 &1692189267
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,8 +4080,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d133de6d8817e1a4d8ccfb3c76ca1ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lights: []
   object_spotlight: {fileID: 195364, guid: aa41b0970b21b714c800ce60e4c8041e, type: 2}
+  playerSmall: {fileID: 0}
+  isTrigger: 0
+  Target: {fileID: 0}
 --- !u!1 &2145322585
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: d0b8067bf1a9f3047a76942fcbdf1c06, type: 2}

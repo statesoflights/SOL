@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 	private CapsuleCollider capsule;	
 	private SpriteRenderer sr;
 	private Rigidbody rb;
+    private Collider collider;
 
 	//Retourne le rayon du capsule collider du perso, qui permettra de faire un sphereCast pour savoir si le perso peut changer de plan
 	public float Radius
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		sr = GetComponent<SpriteRenderer> ();
 		rb = GetComponent<Rigidbody> ();
+        collider = GetComponent<Collider>();
     }
 
 	void Start()
@@ -159,16 +161,25 @@ public class PlayerController : MonoBehaviour {
     private bool CanMoveVertically(Vector3 rayDirection)
     {
         RaycastHit hit;
-        Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
-		if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace)&& ! hit.collider.isTrigger)
+        //Vector3 p1 = transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection);
+        Vector3 p1 = transform.position;
+        p1.y -= collider.bounds.extents.y - 0.1f;
+
+        //check perso touche le sol
+        if (Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1F))
         {
-			if (hit.collider.tag == "Wall" )
+            //check raycast des pieds du perso
+            if (Physics.SphereCast(p1, Radius, rayDirection, out hit, verticalPace) && !hit.collider.isTrigger)
             {
+                //if (hit.collider.tag == "Wall" )
+                //{
                 return false;
-			}
-		}
-		if(!Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y +0.1F))
-		   return false;
+                //}
+            }
+            //check raycast du centre du perso
+            else if (Physics.SphereCast(transform.position + (2.5f * GetComponent<CapsuleCollider>().radius * rayDirection), Radius, rayDirection, out hit, verticalPace) && !hit.collider.isTrigger)
+                return false;
+        }
         return true;
     }
 
@@ -211,7 +222,7 @@ public class PlayerController : MonoBehaviour {
 //        if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.6F) &&
 //            (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall"))
 		//if (Physics.SphereCast(new Ray(transform.position, -Vector3.up), Radius, GetComponent<Collider>().bounds.extents.y+0.1F -Radius))
-		if (Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.1F))
+        if (Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1F))
 		{
 			if (collision.gameObject.tag == "Floor" ||collision.gameObject.tag == "Wall")
 			{
@@ -228,7 +239,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			isGrounded = false;
 		}
-        if (!Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + 0.1F))
+        if (!Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1F))
 		{     
 			isGrounded = false; 
 		}
