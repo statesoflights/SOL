@@ -4,34 +4,51 @@ using System.Collections;
 public class Guard_Trigger : MonoBehaviour {
 
     public Guard_Detection guard;
-    float wait_time;
+    public float wait_time;
+    public int countDetected;
 
     void Start()
     {
-        wait_time = 0.5f;
+        //wait_time = 0f;
+        countDetected = 0;
     }
 
-    IEnumerator WaitfewSecs()
+    IEnumerator WaitfewSecs(Collider other)
     {
-        yield return new WaitForSeconds(wait_time);
         guard.PlayerDetected();
+        yield return new WaitForSeconds(wait_time);
+
+        other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Vector3 dest_pos = other.transform.position;
+        dest_pos.x = 72.5f;
+        other.transform.position = dest_pos;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Player") || other.tag.Equals("PlayerSmall"))
+        if (other.tag.Equals("Player") )
         {
-            StopAllCoroutines();
-            StartCoroutine(WaitfewSecs());
+            countDetected++;
+            //StopCoroutine("WaitfewSecs");
+            StartCoroutine("WaitfewSecs",other);
+        }
+        if (other.tag.Equals("PlayerSmall"))
+        {
+            countDetected++;
+            StartCoroutine("WaitfewSecs", other);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag.Equals("Player") || other.tag.Equals("PlayerSmall"))
+        if ((other.tag.Equals("Player") || other.tag.Equals("PlayerSmall")))
         {
-            StopAllCoroutines();
-            guard.PlayerNotDetected();
+            countDetected--;
+            if (countDetected == 0)
+            {
+                StopAllCoroutines();
+                guard.PlayerNotDetected();
+            }
         }
     }
 }

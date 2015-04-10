@@ -106,7 +106,10 @@ public class Biggy : MonoBehaviour
 
         //yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
         pc.goToSpeed = 2.0F;
-        yield return pc.StartCoroutine("VerticalGoto", destinationpos);
+        //yield return pc.StartCoroutine("VerticalGoto", destinationpos);
+        transform.position = destinationpos;
+        yield return null;
+
         pc.goToSpeed = 4.0F;
         pc.isCLimbing = false;
     }

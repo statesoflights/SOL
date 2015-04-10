@@ -49,11 +49,14 @@ public class CameraController : MonoBehaviour {
 		RaycastHit[] hits;
 		hits = Physics.RaycastAll(transform.position, directionCamPlayer, distanceCamPlayer - 1.0F);
 
+        Debug.DrawLine(transform.position, new Vector3(target.position.x,target.position.y,target.position.z-1), Color.red);
+
 		for (int i = 0; i < hits.Length; i++) {
 			RaycastHit hit = hits [i];
 			SpriteRenderer[] spriteRenderers = hit.collider.GetComponentsInChildren<SpriteRenderer> ();
 			if (hit.collider.tag != "Statue") {
-				foreach (SpriteRenderer rend in spriteRenderers) {
+				foreach (SpriteRenderer rend in spriteRenderers) 
+                {
 					if (rend) {
 						rend.sharedMaterial = matTransparent;
 //					Debug.Log ("TRANSPARENT BITCH");
@@ -63,6 +66,12 @@ public class CameraController : MonoBehaviour {
 					}
 					listElementTransparent.Add (rend);
 				}
+                //if (hit.collider.GetComponent<SpriteRenderer>())
+                //{
+                //    hit.collider.GetComponent<SpriteRenderer>().sharedMaterial = matTransparent;
+                //    listElementTransparent.Add(hit.collider.GetComponent<SpriteRenderer>());
+                //}
+
 				//SpriteRenderer rend = hit.transform.GetComponent<SpriteRenderer>();		
 			}
 		}
