@@ -1318,7 +1318,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 76305ca5f969deb499b07c40ea72edb6, type: 2}
+  - {fileID: 2100000, guid: e7a6a4b2525ff6a4284e56069814c82d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1490,7 +1490,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 3071aa6a0376ef04ab78a365534f62dd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.4000001
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 425530, guid: 3071aa6a0376ef04ab78a365534f62dd, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10768,7 +10768,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 406792, guid: 6504e21853c97564681fed87478339f2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -.189999998
       objectReference: {fileID: 0}
     - target: {fileID: 406792, guid: 6504e21853c97564681fed87478339f2, type: 2}
       propertyPath: m_LocalRotation.x
