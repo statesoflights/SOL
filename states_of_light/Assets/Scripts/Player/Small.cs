@@ -5,7 +5,7 @@ public class Small : MonoBehaviour {
 
     public Transform playerBiggy;
 
-    private PlayerController pc;
+    public PlayerController pc;
     public bool canFollow;
     public bool isFollowing;
     private Vector3 posFollow;

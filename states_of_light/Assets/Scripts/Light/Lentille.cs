@@ -41,7 +41,8 @@ public class Lentille : MonoBehaviour {
         GameObject temp_lo = lights.Find(O => O.id == index).spotlight;
         temp_lo.transform.rotation = target_Pos;
 
-		if (isTrigger && Mathf.Abs(transform.position.x-playerSmall.transform.position.x)<=0.5F && playerSmall.transform.position.z < 1)
+		if (isTrigger && Mathf.Abs(transform.position.x-playerSmall.transform.position.x)<=0.5F && playerSmall.transform.position.z < 1 &&
+            !playerSmall.isFollowing && playerSmall.pc.isGrounded)
             isTriggered();
     }
 
