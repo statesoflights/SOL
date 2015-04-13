@@ -48,9 +48,11 @@ public class Lentille : MonoBehaviour {
 
     public void isTriggered()
     {
+        Debug.Log("Here");
         Target.GetComponent<Guard_Detection>().isActive = false;
         //Target.GetComponent<SpriteRenderer>().enabled = false;
 		Target.GetComponent<Guard_Detection>().hasSeenShadow = true;
+        isTrigger = false;
 
     }
 }

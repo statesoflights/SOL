@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Environment\Niveau1_Script_Machine.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger1.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_Anim.cs" />
+     <Compile Include="Assets\Scripts\Environment\Trigger_CanWalkUp.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_EndLevel.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_GUI.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_Interruptor.cs" />

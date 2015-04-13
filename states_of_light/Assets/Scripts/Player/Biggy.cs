@@ -98,17 +98,22 @@ public class Biggy : MonoBehaviour
     IEnumerator ClimbWall(RaycastHit hit)
     {
         pc.isCLimbing = true;
-        //animator.Play("WallClimb_Right");
+        animator.SetBool("isClimbing",true);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
         Vector3 targetSize = hit.collider.GetComponent<BoxCollider>().center + hit.collider.bounds.size;
         Vector3 destinationpos = transform.position;
         destinationpos.y = hit.collider.transform.position.y + (targetSize.y / 2) + collider.bounds.extents.y;
         destinationpos.x += Input.GetAxis("Horizontal") >= 0 ? collider.bounds.size.x : -collider.bounds.size.x;
 
-        //yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
-        pc.goToSpeed = 2.0F;
-        //yield return pc.StartCoroutine("VerticalGoto", destinationpos);
+
+        //
+        
+        //while(animator.GetCurrentAnimatorClipInfo(0).)
+        animator.SetBool("isClimbing", false);
         transform.position = destinationpos;
-        yield return null;
+        //pc.goToSpeed = 2.0F;
+        //yield return pc.StartCoroutine("VerticalGoto", destinationpos);
+        //yield return null;
 
         pc.goToSpeed = 4.0F;
         pc.isCLimbing = false;
