@@ -3095,7 +3095,12 @@ Prefab:
       propertyPath: Level_to_Load
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 127646, guid: 79ecb7534ad764d4a9be421c45765df9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11427646, guid: 79ecb7534ad764d4a9be421c45765df9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 79ecb7534ad764d4a9be421c45765df9, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &209283862
@@ -7203,6 +7208,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &528389887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 528389884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806df219cf5cb9d478e66c50c9342ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level_to_Load: 2
 --- !u!1001 &539145750
 Prefab:
   m_ObjectHideFlags: 0

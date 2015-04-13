@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  hasSeenShadow: 0
 --- !u!1 &24341674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 265786225}
   punchabelObject: 0
+  mur: {fileID: 0}
 --- !u!4 &268628560
 Transform:
   m_PrefabParentObject: {fileID: 422512, guid: f6a5eda6b0e810446b942972b24bab6d, type: 2}
