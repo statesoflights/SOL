@@ -22,7 +22,9 @@ public class LaserScript : MonoBehaviour
     void Awake()
     {
         pc_Zac = transform.GetComponentInParent<PlayerController>();
+        
         light = transform.GetComponentInChildren<Light>();
+
     }
 
     void Start()
@@ -70,6 +72,7 @@ public class LaserScript : MonoBehaviour
                 if (hit.collider.tag == "LaserTrigger")
                 {
                     hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+                    light.enabled = true;
                     canFire = true;
                 }
 
@@ -128,7 +131,7 @@ public class LaserScript : MonoBehaviour
         }
 
         line.enabled = false;
-        //light.enabled = false;
+        light.enabled = false;
         isFiringLaser = false;
     }
 
@@ -176,8 +179,8 @@ public class LaserScript : MonoBehaviour
             line.SetPosition(1, hit.transform.position);
 
             //Update la position du point light, position juste avant le hit point de la line renderer
-            //float hit_Distance = Vector3.Distance(transform.position, hit.point);
-            //light.transform.position = rayFromGun.GetPoint(hit_Distance - 0.1F);
+            float hit_Distance = Vector3.Distance(transform.position, hit.point);
+            light.transform.position = rayFromGun.GetPoint(hit_Distance - 0.1F);
         }
         else
         {
