@@ -61,7 +61,7 @@ public class LaserScript : MonoBehaviour
     }
     void CheckClickedPoint()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             mouse = RetrieveMousePosition(i);
             Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
@@ -71,7 +71,10 @@ public class LaserScript : MonoBehaviour
             {
                 if (hit.collider.tag == "LaserTrigger")
                 {
-                    hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+					if (hit.collider.GetComponent<Trigger_Laser>()) 
+						hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+					if (hit.collider.GetComponent<DenkiDoor>()) 
+						hit.collider.GetComponent<DenkiDoor>().StartAnim();
                     light.enabled = true;
                     canFire = true;
                 }
