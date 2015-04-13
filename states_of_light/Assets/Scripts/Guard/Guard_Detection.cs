@@ -8,7 +8,8 @@ public class Guard_Detection : MonoBehaviour {
     bool isDetectingPlayer;
     public bool isActive;
     SpriteRenderer sprite;
-	public bool hasSeenShadow;
+    public bool hasSeenShadow;
+    public Animator text_animator;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,12 @@ public class Guard_Detection : MonoBehaviour {
         else
             sprite.color = Color.white;
 
-		if (hasSeenShadow) animator.SetBool("seenShadow", true);	
+        if (hasSeenShadow)
+        {
+            animator.SetBool("seenShadow", true);
+            if (text_animator)
+                text_animator.SetBool("seenShadow", true);
+        }
 	}
 
     public void PlayerDetected()
