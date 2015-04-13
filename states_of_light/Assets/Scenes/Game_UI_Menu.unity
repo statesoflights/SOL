@@ -601,7 +601,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: "Bienvenue dans le monde de Sol,\nEncore une fois nos deux protagonistes,
     \nZac & Cello, ont fait la betise de declencher une foreuse qui a tout detruit
-    sur son passage. \nAider les a la retrouver au fond de la grotte."
+    tous sur son passage. \nAider les a la retrouver au fond de la grotte."
 --- !u!222 &1495302654
 CanvasRenderer:
   m_ObjectHideFlags: 0

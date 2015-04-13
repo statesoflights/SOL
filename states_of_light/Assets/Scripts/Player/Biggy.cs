@@ -106,9 +106,9 @@ public class Biggy : MonoBehaviour
 
         //yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
         pc.goToSpeed = 2.0F;
-        //yield return pc.StartCoroutine("VerticalGoto", destinationpos);
-        transform.position = destinationpos;
-        yield return null;
+        yield return pc.StartCoroutine("VerticalGoto", destinationpos);
+        //transform.position = destinationpos;
+        //yield return null;
 
         pc.goToSpeed = 4.0F;
         pc.isCLimbing = false;
@@ -126,13 +126,14 @@ public class Biggy : MonoBehaviour
         {
             if (pushDirection && Physics.Raycast(transform.position, transform.right, out hit, collider.bounds.extents.x + 0.5f))
             {
+                UpdateDirection(false);
                 if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
                 {
                     pc.isDragging = true;
 
                     animator.SetBool("isDragging", true);
                     //if(animator.GetCurrentAnimatorStateInfo(0).IsName( "Push_Right_Fusion"))
-                    //    animator.speed = Input.GetAxis("Horizontal");
+                    //animator.speed = 1;
 
                     if (dragDistance == 0)
                         dragDistance = hit.collider.transform.position.x - transform.position.x;
@@ -149,13 +150,14 @@ public class Biggy : MonoBehaviour
             else
                 if (!pushDirection && Physics.Raycast(transform.position, -transform.right, out hit, collider.bounds.extents.x + 0.5f))
                 {
+                    UpdateDirection(true);
                     if (hit.collider.GetComponent<DragableStone>() && hit.collider.GetComponent<DragableStone>().canBeDragged)
                     {
                         pc.isDragging = true;
                         
                         animator.SetBool("isDragging", true);
                         //if(animator.GetCurrentAnimatorStateInfo(0).IsName( "Push_Right_Fusion"))
-                        //    animator.speed = -Input.GetAxis("Horizontal");
+                            //animator.speed = -1;
                         
                         if (dragDistance == 0)
                             dragDistance = transform.position.x - hit.collider.transform.position.x;
@@ -175,10 +177,31 @@ public class Biggy : MonoBehaviour
 
             yield return null;
         }
+        pc.isLookingRight = pushDirection;
 
         animator.speed = 1;
         animator.SetBool("isDragging", false);
         pc.isDragging = false;
         dragDistance = 0;
+    }
+
+    void UpdateDirection(bool inverse)
+    {
+        if (Input.GetAxis("Horizontal") > 0.01)
+        {
+            if(!inverse)
+                pc.isLookingRight = true;
+            else
+                pc.isLookingRight = false;
+
+        }
+        else if (Input.GetAxis("Horizontal") < -0.01)
+        {
+            if(!inverse)
+                pc.isLookingRight = false;
+            else
+                pc.isLookingRight = true;
+        }
+                
     }
 }

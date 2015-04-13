@@ -75,17 +75,22 @@ public class PlayerController : MonoBehaviour {
         {
 			if (!isMovingVertically && !isCLimbing)
             {         
-                if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01) 
-				{
-					isLookingRight = true;
-					if (!isDragging)
-					transform.localScale = Vector3.one;
+                if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01)
+                {
+                    if (!isDragging)
+                    {
+                        isLookingRight = true;
+                        transform.localScale = Vector3.one;
+                    }
+
 				}
-                else if (Input.GetAxis("Horizontal") < -0.01) 
-				{
-					isLookingRight = false;
-					if (!isDragging)
-					transform.localScale = Vector3.one + 2*Vector3.left;
+                else if (Input.GetAxis("Horizontal") < -0.01)
+                {
+                    if (!isDragging)
+                    {
+                        isLookingRight = false;
+                        transform.localScale = Vector3.one + 2 * Vector3.left;
+                    }
 				}
                 
 
