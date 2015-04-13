@@ -29,4 +29,9 @@ public class Trigger_EndLevel : MonoBehaviour {
             Application.LoadLevel(Level_to_Load);
 		}
 	}
+
+    public void LoadLevel()
+    {
+        Application.LoadLevel(Level_to_Load);
+    }
 }
