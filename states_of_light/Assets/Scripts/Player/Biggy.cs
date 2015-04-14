@@ -115,6 +115,7 @@ public class Biggy : MonoBehaviour
             destinationpos.x += Input.GetAxis("Horizontal") >= 0 ? collider.bounds.size.x : -collider.bounds.size.x;
 
             Camera.main.GetComponent<CameraController>().StartCoroutine("Goto", destinationpos);
+            pc.canSwitch = false;
     }
     public void ClimbWallEnded()
     {
@@ -123,6 +124,7 @@ public class Biggy : MonoBehaviour
         animator.enabled = true; 
         GetComponent<SpriteRenderer>().enabled = true;
         pc.isCLimbing = false;
+        pc.canSwitch = true;
     }
 
     IEnumerator DragObject()
