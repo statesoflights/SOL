@@ -18,8 +18,10 @@ public class BiggyParent : MonoBehaviour {
     {
         sr.enabled = false;
     }
-	
-	public void StartAnim () {
+
+    public void StartAnim()
+    {
+        Debug.Log("ClimbWall");
         sr_Biggy.enabled = false;
         sr.enabled = true;
         if (biggy.Fusion)
@@ -29,7 +31,8 @@ public class BiggyParent : MonoBehaviour {
 	}
     public void AnimEnded()
     {
-        sr_Biggy.enabled = true;
+        anim.Play("New State");
+        Debug.Log("ClimbWallEnded");
         sr.enabled = false;
         biggy.ClimbWallEnded();
     }
