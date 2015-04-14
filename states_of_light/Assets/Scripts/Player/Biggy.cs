@@ -35,8 +35,7 @@ public class Biggy : MonoBehaviour
         {
             //if (!isJumping && isGrounded && !isCLimbing)
 
-            if (!pc.isJumping && !pc.isCLimbing && !pc.isDragging && 
-                Input.GetButton("Horizontal") && Input.GetButton("Jump")&&!CanClimbWall())
+            if (!pc.isJumping && !pc.isCLimbing && !pc.isDragging && Input.GetButton("Jump")&&!CanClimbWall())
             {
                 pc.rb.AddForce(0, pc.jumpForce, 0);
                 pc.canSwitch = false;

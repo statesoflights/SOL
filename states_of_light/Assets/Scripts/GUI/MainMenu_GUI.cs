@@ -10,9 +10,9 @@ public class MainMenu_GUI : MonoBehaviour {
 	void Start()
     {
 		anchor_Intro.alpha = 0;
-		anchor_MainMenu.alpha = 1;
-        //anchor_Logo.alpha = 0;
-        //StartCoroutine("FadeIn", anchor_Logo);
+		anchor_MainMenu.alpha = 0;
+        anchor_Logo.alpha = 0;
+        StartCoroutine("FadeIn", anchor_Logo);
 	}
     IEnumerator FadeIn(CanvasGroup group)
     {
@@ -32,6 +32,7 @@ public class MainMenu_GUI : MonoBehaviour {
             group.alpha = Mathf.Lerp(alpha, 0, t);
             yield return null;
         }
+        anchor_MainMenu.alpha = 1;
     }
 
     public void LoadIntro()
