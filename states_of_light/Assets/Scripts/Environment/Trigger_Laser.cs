@@ -11,6 +11,7 @@ public class Trigger_Laser : MonoBehaviour {
 
 	public void StartAnim(){
 		StartCoroutine("Anim");
+		Debug.Log ("start anim");
 	}
 	IEnumerator Anim()
     {
@@ -21,6 +22,7 @@ public class Trigger_Laser : MonoBehaviour {
         }
         else
         {
+			Debug.Log ("start anim 2");
             yield return new WaitForSeconds(2.0f);
             anim.SetBool("Trigger", true);
             ls.EndFiringLaser();
