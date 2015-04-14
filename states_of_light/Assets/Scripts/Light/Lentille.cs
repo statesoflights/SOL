@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,11 @@ public class Lentille : MonoBehaviour {
     public List<LightObject> lights;
     public GameObject object_spotlight;
     public Small playerSmall;
-    public bool isTrigger;
+    [Header("Trigger Guard")]
+    public bool isGuardTrigger;
     public GameObject Target;
+    public GameObject guard_LimitCollider;
+    public Text guard_Alert_text;
 
     void Awake()
     {
@@ -41,17 +45,20 @@ public class Lentille : MonoBehaviour {
         GameObject temp_lo = lights.Find(O => O.id == index).spotlight;
         temp_lo.transform.rotation = target_Pos;
 
-		if (isTrigger && Mathf.Abs(transform.position.x-playerSmall.transform.position.x)<=0.5F && playerSmall.transform.position.z < 1 &&
+		if (isGuardTrigger && Mathf.Abs(transform.position.x-playerSmall.transform.position.x)<=0.5F && playerSmall.transform.position.z < 1 &&
             !playerSmall.isFollowing && playerSmall.pc.isGrounded)
-            isTriggered();
+            DesactiveGuard();
     }
 
-    public void isTriggered()
+    public void DesactiveGuard()
     {
+
         Target.GetComponent<Guard_Detection>().isActive = false;
         //Target.GetComponent<SpriteRenderer>().enabled = false;
 		Target.GetComponent<Guard_Detection>().hasSeenShadow = true;
-        isTrigger = false;
+        guard_Alert_text.enabled = false;
+        guard_LimitCollider.SetActive(false);
+        isGuardTrigger = false;
 
     }
 }
