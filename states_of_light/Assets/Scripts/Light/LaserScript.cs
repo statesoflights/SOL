@@ -61,17 +61,20 @@ public class LaserScript : MonoBehaviour
     }
     void CheckClickedPoint()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             mouse = RetrieveMousePosition(i);
             Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
             RaycastHit hit;
-            if (Physics.Raycast(rayFromGun, out hit, 30F) &&
+            if (Physics.Raycast(rayFromGun, out hit, 10F) &&
                 (hit.collider.tag == "Lentille" || hit.collider.tag == "LaserTrigger"))
             {
                 if (hit.collider.tag == "LaserTrigger")
                 {
-                    hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+					if (hit.collider.GetComponent<Trigger_Laser>()) 
+						hit.collider.GetComponent<Trigger_Laser>().StartAnim();
+					if (hit.collider.GetComponent<DenkiDoor>()) 
+						hit.collider.GetComponent<DenkiDoor>().StartAnim();
                     light.enabled = true;
                     canFire = true;
                 }
@@ -130,9 +133,15 @@ public class LaserScript : MonoBehaviour
             yield return null;
         }
 
+        EndFiringLaser();
+    }
+    public void EndFiringLaser()
+    {
+        StopCoroutine("FireLaser");
         line.enabled = false;
         light.enabled = false;
         isFiringLaser = false;
+        canFire = false;
     }
 
     Vector3 RetrieveMousePosition(int PlanPosition)
@@ -152,7 +161,7 @@ public class LaserScript : MonoBehaviour
 
         Ray rayFromGun = new Ray(transform.position, mouse - transform.position);
         RaycastHit hit;
-        if (Physics.Raycast(rayFromGun, out hit, 30F))
+        if (Physics.Raycast(rayFromGun, out hit, 30F) && (hit.collider.tag == "Lentille" || hit.collider.tag == "LaserTrigger"))
         {
             if (lentilleSpotLight_ID == -1)
             {
@@ -173,14 +182,16 @@ public class LaserScript : MonoBehaviour
                 lentille.Desactivate("Lumen");
                 lentilleSpotLight_ID = -1;
                 line.enabled = false;
+                return;
                 //light.enabled = true;
             }
 
             line.SetPosition(1, hit.transform.position);
 
             //Update la position du point light, position juste avant le hit point de la line renderer
-            float hit_Distance = Vector3.Distance(transform.position, hit.point);
-            light.transform.position = rayFromGun.GetPoint(hit_Distance - 0.1F);
+            //float hit_Distance = Vector3.Distance(transform.position, hit.transform.position);
+            //light.transform.position = rayFromGun.GetPoint(hit_Distance - 0.1F);
+            light.transform.position = hit.transform.position;
         }
         else
         {

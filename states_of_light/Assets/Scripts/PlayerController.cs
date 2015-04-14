@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool isLookingRight;
     public bool isMovingVertically;
-    private bool directionUp;
+    public bool directionUp;
 
     public bool isGrounded;
     public bool isCurrentPlayer;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public bool isDragging;
 	public bool isJumping;
 	public bool isCLimbing;
+    public bool canJump;
 
     public int speed;
 	public int jumpForce;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
 	private CapsuleCollider capsule;	
 	private SpriteRenderer sr;
-	private Rigidbody rb;
+	public Rigidbody rb;
     private Collider collider;
 
 	//Retourne le rayon du capsule collider du perso, qui permettra de faire un sphereCast pour savoir si le perso peut changer de plan
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Start()
 	{
+        //if player is biggy he cant jump
+        canJump = true;
 		canSwitch = true;
 		isLookingRight = true;
 		isMovingVertically = false;
@@ -117,9 +120,9 @@ public class PlayerController : MonoBehaviour {
 			rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
 
 
-        if (Input.GetButton("Jump"))
+        if (canJump && Input.GetButton("Jump"))
         {
-			if (!isJumping && isGrounded)
+			if (!isJumping && isGrounded && !isCLimbing)
 			{
 				rb.AddForce(0, jumpForce, 0);
 				canSwitch = false;
@@ -135,7 +138,6 @@ public class PlayerController : MonoBehaviour {
         animator.SetBool("directionUp", directionUp);
         animator.SetBool("isMovingVertically", isMovingVertically);	
     }
-	
 	
     private void VerticalMoveStart()
     {
@@ -160,7 +162,6 @@ public class PlayerController : MonoBehaviour {
         StopCoroutine("VerticalGoto");
         StartCoroutine("VerticalGoto", gotoPosition);
     }
-
 
 	//Retourne true si le perso peut se déplacer verticalement
     private bool CanMoveVertically(Vector3 rayDirection)
@@ -234,6 +235,7 @@ public class PlayerController : MonoBehaviour {
 				isGrounded = true;
 				canSwitch = true;
 				isJumping = false;
+                rb.velocity = Vector3.zero;
 			}            
         }
 	}

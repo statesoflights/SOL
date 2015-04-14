@@ -48,10 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CursorController.cs" />
+     <Compile Include="Assets\Scripts\Environment\DenkiDoor.cs" />
      <Compile Include="Assets\Scripts\Environment\DragableStone.cs" />
      <Compile Include="Assets\Scripts\Environment\Niveau1_Script_Machine.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger1.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_Anim.cs" />
+     <Compile Include="Assets\Scripts\Environment\Trigger_CanWalkUp.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_EndLevel.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_GUI.cs" />
      <Compile Include="Assets\Scripts\Environment\Trigger_Interruptor.cs" />
@@ -67,6 +69,7 @@
      <Compile Include="Assets\Scripts\Light\LightEmitter.cs" />
      <Compile Include="Assets\Scripts\Light\LightObject.cs" />
      <Compile Include="Assets\Scripts\Player\Biggy.cs" />
+     <Compile Include="Assets\Scripts\Player\BiggyParent.cs" />
      <Compile Include="Assets\Scripts\Player\Small.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Shaders\BumpedSprites\BumpedSprite.cs" />

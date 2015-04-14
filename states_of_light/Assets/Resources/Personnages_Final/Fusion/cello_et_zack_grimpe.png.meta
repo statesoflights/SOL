@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: ac8ad9ce0cd5c95459ae4826b7df7714
+timeCreated: 1428989031
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cello_et_zack_grimpe_0
+    21300002: cello_et_zack_grimpe_1
+    21300004: cello_et_zack_grimpe_2
+    21300006: cello_et_zack_grimpe_3
+    21300008: cello_et_zack_grimpe_4
+    21300010: cello_et_zack_grimpe_5
+    21300012: cello_et_zack_grimpe_6
+    21300014: cello_et_zack_grimpe_7
+    21300016: cello_et_zack_grimpe_8
+    21300018: cello_et_zack_grimpe_9
+    21300020: cello_et_zack_grimpe_10
+    21300022: cello_et_zack_grimpe_11
+    21300024: cello_et_zack_grimpe_12
+    21300026: cello_et_zack_grimpe_13
+    21300028: cello_et_zack_grimpe_14
+    21300030: cello_et_zack_grimpe_15
+    21300032: cello_et_zack_grimpe_16
+    21300034: cello_et_zack_grimpe_17
+    21300036: cello_et_zack_grimpe_18
+    21300038: cello_et_zack_grimpe_19
+    21300040: cello_et_zack_grimpe_20
+    21300042: cello_et_zack_grimpe_21
+    21300044: cello_et_zack_grimpe_22
+    21300046: cello_et_zack_grimpe_23
+    21300048: cello_et_zack_grimpe_24
+    21300050: cello_et_zack_grimpe_25
+    21300052: cello_et_zack_grimpe_26
+    21300054: cello_et_zack_grimpe_27
+    21300056: cello_et_zack_grimpe_28
+    21300058: cello_et_zack_grimpe_29
+    21300060: cello_et_zack_grimpe_30
+    21300062: cello_et_zack_grimpe_31
+    21300064: cello_et_zack_grimpe_32
+    21300066: cello_et_zack_grimpe_33
+    21300068: cello_et_zack_grimpe_34
+    21300070: cello_et_zack_grimpe_35
+    21300072: cello_et_zack_grimpe_36
+    21300074: cello_et_zack_grimpe_37
+    21300076: cello_et_zack_grimpe_38
+    21300078: cello_et_zack_grimpe_39
+    21300080: cello_et_zack_grimpe_40
+    21300082: cello_et_zack_grimpe_41
+    21300084: cello_et_zack_grimpe_42
+    21300086: cello_et_zack_grimpe_43
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: cello_et_zack_grimpe_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_1
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_2
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_3
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_4
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_5
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_6
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_7
+      rect:
+        serializedVersion: 2
+        x: 3759
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_8
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_9
+      rect:
+        serializedVersion: 2
+        x: 4833
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_10
+      rect:
+        serializedVersion: 2
+        x: 5370
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_11
+      rect:
+        serializedVersion: 2
+        x: 5907
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_12
+      rect:
+        serializedVersion: 2
+        x: 6444
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_13
+      rect:
+        serializedVersion: 2
+        x: 6981
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_14
+      rect:
+        serializedVersion: 2
+        x: 7518
+        y: 7205
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_16
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_17
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_18
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_19
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_20
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_21
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_22
+      rect:
+        serializedVersion: 2
+        x: 3759
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_23
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_24
+      rect:
+        serializedVersion: 2
+        x: 4833
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_25
+      rect:
+        serializedVersion: 2
+        x: 5370
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_26
+      rect:
+        serializedVersion: 2
+        x: 5907
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_27
+      rect:
+        serializedVersion: 2
+        x: 6444
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_28
+      rect:
+        serializedVersion: 2
+        x: 6981
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_29
+      rect:
+        serializedVersion: 2
+        x: 7518
+        y: 6018
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4831
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_31
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 4831
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_32
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 4831
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello_et_zack_grimpe_33
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 4831
+        width: 530
+        height: 987
+      alignment: 9
+      pivot: {x: .300000012, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1bacfa84ed57f1f4f9aaaa41eeb96850
-timeCreated: 1428453287
+timeCreated: 1428972091
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -31,6 +31,7 @@ TextureImporter:
     21300048: cello-et-zack_face_marche_descend-taille500_567-padding2_4_24
     21300050: cello-et-zack_face_marche_descend-taille500_567-padding2_4_25
     21300052: cello-et-zack_face_marche_descend-taille500_567-padding2_4_26
+    21300054: cello-et-zack_face_marche_descend-taille500_567-padding2_4_27
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -80,9 +81,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -90,9 +91,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 503
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,9 +101,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1006
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,9 +111,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1509
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,9 +121,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2012
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,9 +131,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2515
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,9 +141,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3018
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,9 +151,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3521
-        y: 3527
+        y: 3526
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,9 +161,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,9 +171,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 503
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,9 +181,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1006
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,9 +191,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1509
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,9 +201,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2012
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,9 +211,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2515
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,9 +221,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3018
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,9 +231,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3521
-        y: 2954
+        y: 2951
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,9 +241,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,9 +251,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 503
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,9 +261,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1006
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,9 +271,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1509
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,9 +281,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2012
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,9 +291,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2515
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,9 +301,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3018
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,9 +311,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3521
-        y: 2381
+        y: 2376
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,9 +321,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1808
+        y: 1801
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,9 +331,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 503
-        y: 1808
+        y: 1801
         width: 501
-        height: 569
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,9 +341,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1006
-        y: 1808
+        y: 1801
         width: 501
-        height: 569
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cello-et-zack_face_marche_descend-taille500_567-padding2_4_27
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 1226
+        width: 501
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

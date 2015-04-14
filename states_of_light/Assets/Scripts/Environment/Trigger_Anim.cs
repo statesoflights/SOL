@@ -5,6 +5,7 @@ public class Trigger_Anim : MonoBehaviour {
 
     public Animator anim;
 	public bool punchabelObject;
+	public GameObject mur;
 
     private bool startedcoroutine;
 
@@ -24,12 +25,15 @@ public class Trigger_Anim : MonoBehaviour {
                 other.GetComponent<Biggy>().StartCoroutine("HitStart", this);
                 startedcoroutine = true;
             }
-            else 
-                anim.SetBool("Trigger", true);
+            else
+			{
+                anim.SetBool("BrokenWall", true);
+				mur.GetComponent<Collider>().enabled = false;
+			}
         }
     }
 	public void StartAnim()
 	{
-		anim.SetBool("Trigger", true);
+		anim.SetBool("BrokenWall", true);
 	}
 }

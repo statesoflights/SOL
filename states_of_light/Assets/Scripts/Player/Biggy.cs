@@ -13,6 +13,7 @@ public class Biggy : MonoBehaviour
     public float dragDistance;
     Trigger_Anim tranim;
     private Collider collider;
+    Vector3 destinationpos;
 
     void Awake()
     {
@@ -23,32 +24,36 @@ public class Biggy : MonoBehaviour
     }
     void Start()
     {
+        pc.canJump = false;
         pc.jumpForce = 250;
         pc.speed = 3;
     }
 
     void FixedUpdate()
     {
-        if (pc.isCurrentPlayer)
+        if (pc.isCurrentPlayer && pc.isGrounded)
         {
+            //if (!isJumping && isGrounded && !isCLimbing)
 
-            if (!pc.isCLimbing && !pc.isDragging && Input.GetButton("Horizontal"))
+            if (!pc.isJumping && !pc.isCLimbing && !pc.isDragging && 
+                Input.GetButton("Horizontal") && Input.GetButton("Jump")&&!CanClimbWall())
             {
-                CanClimbWall();
+                pc.rb.AddForce(0, pc.jumpForce, 0);
+                pc.canSwitch = false;
+                pc.isJumping = true;
             }
-            if (pc.isGrounded)
-            {
-                if (!playerSmall.GetComponent<Small>().isFollowing &&
-                    Input.GetButtonDown("RecallSmallPlayer"))
-                    RecallSmall();
+            if (!playerSmall.GetComponent<Small>().isFollowing &&
+                Input.GetButtonDown("RecallSmallPlayer"))
+                RecallSmall();
 
-                if (Input.GetButton("Action") &&!pc.isDragging)
-                {
-                    StopCoroutine(DragObject());
-                    StartCoroutine(DragObject());
-                }
+            if (Input.GetButton("Action") && !pc.isDragging)
+            {
+                StopCoroutine(DragObject());
+                StartCoroutine(DragObject());
             }
+            
         }
+
 
         if (!pc.isCurrentPlayer && !pc.isMovingVertically)
             Fusion = false;
@@ -64,7 +69,6 @@ public class Biggy : MonoBehaviour
 
     IEnumerator HitStart(Trigger_Anim target)
     {
-        Debug.Log(target);
         tranim = target;
         animator.SetBool("Hit", true);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
@@ -74,11 +78,10 @@ public class Biggy : MonoBehaviour
 
     public void StartAnimTarget()
     {
-        //if(tranim!=null)
         tranim.StartAnim();
     }
 
-    void CanClimbWall()
+    bool CanClimbWall()
     {
         Vector3 headPosition = transform.position;
         headPosition.y += collider.bounds.extents.y - 0.1F;
@@ -89,28 +92,33 @@ public class Biggy : MonoBehaviour
         {
             if (!Physics.Raycast(headPosition, lookDirection, collider.bounds.extents.x + 0.1F))
             {
-                StopCoroutine("ClimbWall");
-                StartCoroutine("ClimbWall", hit);
+                //StopCoroutine("ClimbWall");
+                //StartCoroutine("ClimbWall", hit);
+                ClimbWall(hit);
+                return true;
+
             }
         }
+        return false;
     }
 
-    IEnumerator ClimbWall(RaycastHit hit)
+    void ClimbWall(RaycastHit hit)
     {
         pc.isCLimbing = true;
-        //animator.Play("WallClimb_Right");
-        Vector3 targetSize = hit.collider.GetComponent<BoxCollider>().center + hit.collider.bounds.size;
-        Vector3 destinationpos = transform.position;
-        destinationpos.y = hit.collider.transform.position.y + (targetSize.y / 2) + collider.bounds.extents.y;
-        destinationpos.x += Input.GetAxis("Horizontal") >= 0 ? collider.bounds.size.x : -collider.bounds.size.x;
+        pc.isGrounded = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetComponentInChildren<BiggyParent>().StartAnim();
 
-        //yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
-        pc.goToSpeed = 2.0F;
-        yield return pc.StartCoroutine("VerticalGoto", destinationpos);
-        //transform.position = destinationpos;
-        //yield return null;
-
-        pc.goToSpeed = 4.0F;
+            Vector3 targetSize = hit.collider.GetComponent<BoxCollider>().center + hit.collider.bounds.size;
+            destinationpos = transform.position;
+            destinationpos.y = hit.collider.transform.position.y + (targetSize.y / 2) + collider.bounds.extents.y;
+            destinationpos.x += Input.GetAxis("Horizontal") >= 0 ? collider.bounds.size.x : -collider.bounds.size.x;
+    }
+    public void ClimbWallEnded()
+    {
+        transform.position = destinationpos;
+        animator.enabled = true; 
+        GetComponent<SpriteRenderer>().enabled = true;
         pc.isCLimbing = false;
     }
 
@@ -203,5 +211,18 @@ public class Biggy : MonoBehaviour
                 pc.isLookingRight = true;
         }
                 
+    }
+
+    public void moveToEndLevel()
+    {
+        pc.playerPosition += 1;
+        pc.directionUp = true;
+        //rb.velocity = Vector3.zero;
+        Vector3 gotoPosition = transform.position;
+        gotoPosition.z = (pc.playerPosition * pc.verticalPace);
+        pc.canSwitch = false;
+        pc.isMovingVertically = true;
+        pc.StopCoroutine("VerticalGoto");
+        pc.StartCoroutine("VerticalGoto", gotoPosition);
     }
 }
