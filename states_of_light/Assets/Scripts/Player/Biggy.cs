@@ -105,7 +105,7 @@ public class Biggy : MonoBehaviour
     void ClimbWall(RaycastHit hit)
     {
         pc.isCLimbing = true;
-        pc.isGrounded = false;
+        //pc.isGrounded = false;
         GetComponent<SpriteRenderer>().enabled = false;
         transform.GetComponentInChildren<BiggyParent>().StartAnim();
 
@@ -113,10 +113,13 @@ public class Biggy : MonoBehaviour
             destinationpos = transform.position;
             destinationpos.y = hit.collider.transform.position.y + (targetSize.y / 2) + collider.bounds.extents.y;
             destinationpos.x += Input.GetAxis("Horizontal") >= 0 ? collider.bounds.size.x : -collider.bounds.size.x;
+
+            Camera.main.GetComponent<CameraController>().StartCoroutine("Goto", destinationpos);
     }
     public void ClimbWallEnded()
     {
         transform.position = destinationpos;
+        Camera.main.GetComponent<CameraController>().animated = false;
         animator.enabled = true; 
         GetComponent<SpriteRenderer>().enabled = true;
         pc.isCLimbing = false;

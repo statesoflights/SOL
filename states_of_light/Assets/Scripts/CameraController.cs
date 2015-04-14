@@ -14,19 +14,23 @@ public class CameraController : MonoBehaviour {
     public float speed;
 	public float Xmin;
 	public float Xmax;
+    public bool animated;
 
     void Start()
     {
         speed = 10;
+        animated = false;
     }
 
     void FixedUpdate()
     {
+        if (!animated)
+        {
+            if (!isMovingTowardPlayer) MoveCamera();
+            else MoveTowardPlayer();
+        }
 
-        if (!isMovingTowardPlayer) MoveCamera();
-        else MoveTowardPlayer();
-
-		CheckTransparenty ();
+        CheckTransparenty();
 
     }
 
@@ -106,6 +110,24 @@ public class CameraController : MonoBehaviour {
 
     }
 
+    public IEnumerator Goto(Vector3 target)
+    {
+        animated = true;
+        //rb.isKinematic = true;
+        target.z = transform.position.z;
+        target.y = transform.position.y;
+        while (Vector3.Distance(transform.position, target) > 0.1f)
+        {
+            transform.position = Vector3.Lerp(transform.position, target, 1.1F * Time.deltaTime / Vector3.Distance(transform.position, target));
+            yield return null;
+        }
+        //sr.sortingOrder = -(playerPosition * verticalPace);
+        transform.position = target;
+        //rb.isKinematic = false;
+        //isMovingVertically = false;
+        //canSwitch = true;
+        //goToSpeed = 4.0F;
+    }
 
     public void SwitchPlayer(Transform playerPos)
     {

@@ -202,6 +202,7 @@ public class PlayerController : MonoBehaviour {
         rb.isKinematic = false;
         isMovingVertically = false;
         canSwitch = true;
+        goToSpeed = 4.0F;
 	}
 
 
