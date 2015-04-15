@@ -41,9 +41,6 @@ public class Biggy : MonoBehaviour
                 pc.canSwitch = false;
                 pc.isJumping = true;
             }
-            if (!playerSmall.GetComponent<Small>().isFollowing &&
-                Input.GetButtonDown("RecallSmallPlayer"))
-                RecallSmall();
 
             if (Input.GetButton("Action") && !pc.isDragging)
             {
@@ -58,12 +55,6 @@ public class Biggy : MonoBehaviour
             Fusion = false;
 
         animator.SetBool("Fusion", Fusion);
-    }
-
-    private void RecallSmall()
-    {
-        playerSmall.GetComponent<Small>().StartFollowPlayerAnim();
-        Fusion = true;
     }
 
     IEnumerator HitStart(Trigger_Anim target)
@@ -82,6 +73,7 @@ public class Biggy : MonoBehaviour
 
     bool CanClimbWall()
     {
+        Debug.Log("CanClimbWall");
         Vector3 headPosition = transform.position;
         headPosition.y += collider.bounds.extents.y - 0.1F;
         Vector3 lookDirection = Input.GetAxis("Horizontal") >= 0 ? transform.right : -transform.right;
