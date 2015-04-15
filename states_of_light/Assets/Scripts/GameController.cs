@@ -91,7 +91,11 @@ public class GameController : MonoBehaviour {
         {
             currentPlayer = pc_Small;
             pc_Biggy.DesactivatePlayer();
-            pc_Small.GetComponent<Small>().isFollowing = false;
+            if (small.isFollowing)
+            {
+                small.isFollowing = false;
+                pc_Small.StartCoroutine("WaitUntilIsGrounded");
+            }
             cameraController.SwitchPlayer(pc_Small.transform);
         }
         else
