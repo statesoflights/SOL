@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22457350, guid: 77713818078d40e41acc6c393a1f9235, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22457350, guid: 77713818078d40e41acc6c393a1f9235, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -168,12 +168,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11427426, guid: 77713818078d40e41acc6c393a1f9235, type: 2}
       propertyPath: m_Text
-      value: "Au fond de la cave, la foreuse avait detruit le mur d'entree au batiment
-        secret de Deniki. Zac et Cello vont d\xE9couvrir un mod\xE8le\r de Lumen,
-        un appareil utilis\xE9 par les ing\xE9nieurs et fonctionnant comme une\r lampe
-        de poche. Ils comprennent alors que les magiciens sont en fait des\r ing\xE9nieurs
-        et d\xE9cident de d\xE9couvrir les autres myst\xE8res de leur soci\xE9t\xE9
-        en\r p\xE9n\xE9trant chez Denki."
+      value: "Derri\xE8re le mur, de la lumi\xE8re attire Zac et Cello. Ils d\xE9couvrent
+        un Lumen et comprennent qu'ils sont dans un b\xE2timent prot\xE9g\xE9 de Denki.
+        Pourquoi Denki leur interdisent-ils la lumi\xE8re?"
       objectReference: {fileID: 0}
     - target: {fileID: 11407992, guid: 77713818078d40e41acc6c393a1f9235, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -186,7 +183,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77713818078d40e41acc6c393a1f9235, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &21958982
+--- !u!224 &21958982 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22457350, guid: 77713818078d40e41acc6c393a1f9235,
     type: 2}

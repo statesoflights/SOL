@@ -839,9 +839,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: Bienvenue dans le monde de Sol,Encore une fois nos deux protagonistes, Zac
-    & Cello, ont fait la betise de declencher une foreuse qui a tout detruit tous
-    sur son passage. Aider les a la retrouver au fond de la grotte.
+  m_Text: "\"Allez, un petit coup par l\xE0 et...\" VRAAAAAM!\n\"Et en fait non...
+    Je t'avais dit de pas toucher le limiteur de couple! On la retrouve comment la
+    foreuse maintenant? Viens, on va la chercher!\""
 --- !u!222 &1495302654
 CanvasRenderer:
   m_ObjectHideFlags: 0
