@@ -60,10 +60,11 @@ public class Biggy : MonoBehaviour
     IEnumerator HitStart(Trigger_Anim target)
     {
         tranim = target;
+        pc.isHitting = true;
         animator.SetBool("Hit", true);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
         animator.SetBool("Hit", false);
-        
+        pc.isHitting = false;        
     }
 
     public void StartAnimTarget()
@@ -92,7 +93,6 @@ public class Biggy : MonoBehaviour
         }
         return false;
     }
-
     void ClimbWall(RaycastHit hit)
     {
         pc.isCLimbing = true;

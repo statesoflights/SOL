@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour {
 	public bool isDragging;
 	public bool isJumping;
 	public bool isCLimbing;
+    public bool isHitting;
     public bool canJump;
+    public bool waitIsGrounded;
 
     public int speed;
 	public int jumpForce;
@@ -59,6 +61,8 @@ public class PlayerController : MonoBehaviour {
 		isDragging = false;
 		isJumping = false;
 		isCLimbing = false;
+        isHitting = false;
+        waitIsGrounded = false;
 
 
 		if (jumpForce == 0)
@@ -76,7 +80,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (isCurrentPlayer)
         {
-			if (!isMovingVertically && !isCLimbing)
+			if (!isMovingVertically && !isCLimbing && !isHitting)
             {         
                 if (!isLookingRight && Input.GetAxis("Horizontal") > 0.01)
                 {
@@ -96,7 +100,7 @@ public class PlayerController : MonoBehaviour {
                     }
 				}
                 
-
+                if(!waitIsGrounded)
                 UpdateMovement();
 
                 if (Input.GetAxis("Vertical") != 0 && isGrounded)
@@ -252,5 +256,11 @@ public class PlayerController : MonoBehaviour {
 			isGrounded = false; 
 		}
 
+    }
+    IEnumerator WaitUntilIsGrounded()
+    {
+        waitIsGrounded = true;
+        while (!isGrounded) yield return null;
+        waitIsGrounded = false;
     }
 }
